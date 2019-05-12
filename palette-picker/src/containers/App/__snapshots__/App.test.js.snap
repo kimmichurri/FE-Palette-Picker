@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Container App should match the snapshot with all data passed in 1`] = `
+"<div className=\\"App\\">
+  <header className=\\"App-header\\">
+    <p>
+      Here we are
+    </p>
+  </header>
+</div>"
+`;
