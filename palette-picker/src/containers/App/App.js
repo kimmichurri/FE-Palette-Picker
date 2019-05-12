@@ -21,6 +21,7 @@ export class App extends Component {
   }
 
   render() {
+    const { currentColors } = this.props
 
     return (
       <div className="App">
@@ -28,11 +29,11 @@ export class App extends Component {
           <p>Here we are</p>
         </header>
         <div className="colors-wrapper">
-          <div className="palette-color"></div>
-          <div className="palette-color"></div>
-          <div className="palette-color"></div>
-          <div className="palette-color"></div>
-          <div className="palette-color"></div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[0] }}></div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[1] }}></div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[2] }}></div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[3] }}></div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[4] }}></div>
         </div>
       </div>
     );
