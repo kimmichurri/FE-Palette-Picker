@@ -1,0 +1,17 @@
+.App {
+  height: 800px;
+  width: 500px;
+}
+
+.colors-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 80%;
+}
+
+.palette-color {
+  height: 15%;
+  width: 80%;
+  margin: auto;
+}
