@@ -16,6 +16,18 @@ export class App extends Component {
         <header className="App-header">
           <p>Here we are</p>
         </header>
+        <div className="colors-wrapper">
+          <div className="palette-color">
+          </div>
+          <div className="palette-color">
+          </div>
+          <div className="palette-color">
+          </div>
+          <div className="palette-color">
+          </div>
+          <div className="palette-color">
+          </div>
+        </div>
       </div>
     );
   }
