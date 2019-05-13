@@ -7,5 +7,12 @@ exports[`App Container App should match the snapshot with all data passed in 1`]
       Here we are
     </p>
   </header>
+  <div className=\\"colors-wrapper\\">
+    <div className=\\"palette-color\\" style={{...}} />
+    <div className=\\"palette-color\\" style={{...}} />
+    <div className=\\"palette-color\\" style={{...}} />
+    <div className=\\"palette-color\\" style={{...}} />
+    <div className=\\"palette-color\\" style={{...}} />
+  </div>
 </div>"
 `;
