@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import emptyStar from '../../assets/emptyStar.png';
 import filledStar from '../../assets/filledStar.png';
-import { connect } from 'react-redux';
-import { toggleLocked } from '../../actions';
 
 export default class Color extends Component {
 
