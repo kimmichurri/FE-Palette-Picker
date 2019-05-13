@@ -7,6 +7,7 @@ jest.mock('../../thunks/fetchProjects')
 describe('App Container', () => {
   describe('App', () => {
     let wrapper
+    const mockError = "Something went wrong"
     const mockProjects = [
       { project_id: 1,
         project_name: "Travel App",
@@ -19,16 +20,20 @@ describe('App Container', () => {
         updated_at: "2019-05-10T17:45:09.634Z"
       }
     ]
-    const mockError = "Something went wrong"
+    const mockCurrentColors = ['#F1C231' , '#E69138' , '#44818E' , '#B46005' , '#F9CB9C']
     let mockFetchProjects
-
+    let mockStoreColors
+    
     beforeEach(() => {
       mockFetchProjects = jest.fn().mockImplementation(() => Promise.resolve({mockProjects}))
+      mockStoreColors = jest.fn().mockImplementation(() => Promise.resolve({mockCurrentColors}))
       wrapper = shallow(
         <App 
           error={mockError}
           projects={mockProjects}
           fetchProjects={mockFetchProjects}
+          currentColors={mockCurrentColors}
+          storeColors={mockStoreColors}
         />
       )
     })
