@@ -7,10 +7,10 @@ import Palette from '../Palette/Palette';
 
 export class App extends Component {
 
-  async componentDidMount() {
+  componentDidMount() {
     const url = `https://palette-picker-mfjk.herokuapp.com/api/v1/projects`
     this.props.fetchProjects(url)
-    await this.generateRandomColor()
+    this.generateRandomColor()
   }
 
   generateRandomColor = () => {
@@ -22,6 +22,18 @@ export class App extends Component {
     this.props.storeColors(randomColors)
   }
 
+  updateColors = () => {
+    const updatedColors = this.props.currentColors.map(color => {
+      if (color.locked) {
+        return color
+      } else {
+        const newColor = Math.floor(Math.random()*16777215).toString(16)
+        return { color: `#${newColor}`, locked: false }
+      }
+    })
+    this.props.storeColors(updatedColors)
+  }
+
   render() {
     return (
       <div className="App">
@@ -29,7 +41,7 @@ export class App extends Component {
           <h1>Palette Picker</h1>
         </header>
         <h2>Generate New Palette
-          <button>
+          <button onClick={this.updateColors}>
             <img src={generate} alt={'Generate New Palette icon'}/>
           </button>
         </h2>
@@ -42,6 +54,7 @@ export class App extends Component {
 export const mapStateToProps = (state) => ({
   error: state.error,
   projects: state.projects,
+  currentColors: state.currentColors
 })
 
 export const mapDispatchToProps = (dispatch) => ({
