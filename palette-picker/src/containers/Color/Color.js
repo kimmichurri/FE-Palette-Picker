@@ -10,7 +10,7 @@ export default class Color extends Component {
       <div className="palette-color" style={{ backgroundColor: color }}>
         <h3>{color}</h3>
         <button onClick={this.props.handleToggle} >
-          <img className="star-icon" id={index} src={emptyStar} alt={'not saved icon'}/>
+          <img className="star-icon" id={index} src={locked ? filledStar : emptyStar} alt={'not saved icon'}/>
         </button>
       </div>
     )
