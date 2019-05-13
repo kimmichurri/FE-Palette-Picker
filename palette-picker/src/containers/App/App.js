@@ -38,11 +38,36 @@ export class App extends Component {
           </button>
         </h2>
         <div className="colors-wrapper">
-          <div className="palette-color" style={{ backgroundColor: currentColors[0] }}></div>
-          <div className="palette-color" style={{ backgroundColor: currentColors[1] }}></div>
-          <div className="palette-color" style={{ backgroundColor: currentColors[2] }}></div>
-          <div className="palette-color" style={{ backgroundColor: currentColors[3] }}></div>
-          <div className="palette-color" style={{ backgroundColor: currentColors[4] }}></div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[0] }}>
+            <h3>{currentColors[0]}</h3>
+            <button>
+              <img className="star-icon" src={emptyStar} alt={'not saved icon'}/>
+            </button>
+          </div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[1] }}>
+            <h3>{currentColors[1]}</h3>
+            <button>
+              <img className="star-icon" src={emptyStar} alt={'not saved icon'}/>
+            </button>
+          </div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[2] }}>
+            <h3>{currentColors[2]}</h3>
+            <button>
+              <img className="star-icon" src={emptyStar} alt={'not saved icon'}/>
+            </button>
+          </div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[3] }}>
+            <h3>{currentColors[3]}</h3>
+            <button>
+              <img className="star-icon" src={emptyStar} alt={'not saved icon'}/>
+            </button>
+          </div>
+          <div className="palette-color" style={{ backgroundColor: currentColors[4] }}>
+            <h3>{currentColors[4]}</h3>
+            <button>
+              <img className="star-icon" src={emptyStar} alt={'not saved icon'}/>
+            </button>
+            </div>
         </div>
       </div>
     );
