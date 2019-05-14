@@ -17,3 +17,8 @@ export const addProject = (newProject) => ({
   type: 'ADD_PROJECT',
   newProject
 })
+
+export const addPalette = (newPalette) => ({
+  type: 'ADD_PALETTE',
+  newPalette
+})
