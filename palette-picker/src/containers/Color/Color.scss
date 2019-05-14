@@ -1,0 +1,14 @@
+.palette-color {
+  height: 100px;
+  margin: 0;
+  // display: flex;
+  align-content: space-between
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column
+}
