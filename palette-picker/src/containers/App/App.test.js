@@ -20,7 +20,13 @@ describe('App Container', () => {
         updated_at: "2019-05-10T17:45:09.634Z"
       }
     ]
-    const mockCurrentColors = ['#F1C231' , '#E69138' , '#44818E' , '#B46005' , '#F9CB9C']
+    const mockCurrentColors = [
+      {"color": "#f82e41", "locked": true}, 
+      {"color": "#2261cd", "locked": true}, 
+      {"color": "#271de3", "locked": true}, 
+      {"color": "#1563ec", "locked": true}, 
+      {"color": "#9e0246", "locked": true}
+    ]
     let mockFetchProjects
     let mockStoreColors
     
@@ -45,12 +51,35 @@ describe('App Container', () => {
     it('should invoke fetchProjects on componentDidMount', () => {
       const mockUrl = 'https://palette-picker-mfjk.herokuapp.com/api/v1/projects'
       wrapper.instance().componentDidMount()
+
       expect(mockFetchProjects).toHaveBeenCalledWith(mockUrl)
+    })
+
+    it('should invoke generateRandomColor on componentDidMount', () => {
+      const spy = jest.spyOn(wrapper.instance(), 'generateRandomColor')
+      
+      wrapper.instance().componentDidMount()
+
+      expect(spy).toHaveBeenCalled()
+    })
+
+    it('should call props function storeColors with updatedColors array', () => {
+      const mockUpdatedColors = [
+        {"color": "#f82e41", "locked": true}, 
+        {"color": "#2261cd", "locked": true}, 
+        {"color": "#271de3", "locked": true}, 
+        {"color": "#1563ec", "locked": true}, 
+        {"color": "#9e0246", "locked": true}
+      ]
+
+      wrapper.instance().updateColors()
+
+      expect(wrapper.instance().props.storeColors).toHaveBeenCalledWith(mockUpdatedColors)
     })
   });
 
   describe('mapStateToProps', () => {
-    it('should return an object with an error string and projects array', () => {
+    it('should return an object with an error string, projects array and currentColors array', () => {
       const mockState = {
         projects: [
           { project_id: 1,
@@ -65,6 +94,10 @@ describe('App Container', () => {
           }
         ],
         error: "",
+        currentColors: [
+          {"color": "#f82e41", "locked": true}, 
+          {"color": "#2261cd", "locked": true}
+        ],
         fakeState: "Not real state to return"
       }
 
@@ -81,7 +114,11 @@ describe('App Container', () => {
             updated_at: "2019-05-10T17:45:09.634Z"
           }
         ],
-        error: ""
+        error: "",
+        currentColors: [
+          {"color": "#f82e41", "locked": true}, 
+          {"color": "#2261cd", "locked": true}
+        ]
       }
 
       const mappedProps = mapStateToProps(mockState)
@@ -101,5 +138,21 @@ describe('App Container', () => {
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
+
+    it('should dispatch storeColors with an array of colors', () => {
+      const mockColors = [
+        {"color": "#f82e41", "locked": true}, 
+        {"color": "#2261cd", "locked": true}
+      ]
+      const mockDispatch = jest.fn()
+      const storeColors = jest.fn()
+      const actionToDispatch = storeColors(mockColors)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+
+      mappedProps.storeColors(mockColors)
+
+      expect(mockDispatch).toHaveBeenCalled(actionToDispatch)
+    })
+
   })
-})
+});
