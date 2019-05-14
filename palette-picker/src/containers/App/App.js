@@ -22,18 +22,6 @@ export class App extends Component {
     this.props.storeColors(randomColors)
   }
 
-  updateColors = () => {
-    const updatedColors = this.props.currentColors.map(color => {
-      if (color.locked) {
-        return color
-      } else {
-        const newColor = Math.floor(Math.random()*16777215).toString(16)
-        return { color: `#${newColor}`, locked: false }
-      }
-    })
-    this.props.storeColors(updatedColors)
-  }
-
   render() {
     return (
       <div className="App">
