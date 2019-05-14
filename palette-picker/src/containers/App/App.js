@@ -4,6 +4,7 @@ import { fetchProjects } from '../../thunks/fetchProjects';
 import { storeColors } from '../../actions';
 import generate from '../../assets/generate.png';
 import Palette from '../Palette/Palette';
+import Projects from '../Projects/Projects';
 
 export class App extends Component {
 
@@ -15,7 +16,7 @@ export class App extends Component {
 
   generateRandomColor = () => {
     let randomColors = []
-    for (let i = 0; i < 5; i++ ) {
+    for (let i = 0; i < 5; i++) {
       const randomColor = Math.floor(Math.random()*16777215).toString(16)
       randomColors.push({ color: `#${randomColor}`, locked: false })
     }
@@ -46,6 +47,7 @@ export class App extends Component {
           </button>
         </h2>
         <Palette />
+        <Projects />
       </div>
     );
   }
