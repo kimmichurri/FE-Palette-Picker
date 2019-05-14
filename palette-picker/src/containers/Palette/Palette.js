@@ -29,7 +29,7 @@ export class Palette extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   currentColors: state.currentColors
 })
 
