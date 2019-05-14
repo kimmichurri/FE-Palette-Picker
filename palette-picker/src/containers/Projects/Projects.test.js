@@ -1,6 +1,8 @@
 import { Projects, mapStateToProps, mapDispatchToProps } from './Projects';
 import React from 'react';
 import { shallow } from 'enzyme';
+import { fetchOptionsCreator } from '../../utils/fetchOptionsCreator';
+jest.mock('../../utils/fetchOptionsCreator');
 
 describe('Projects Container', () => {
   describe('Projects', () => {
@@ -52,7 +54,21 @@ describe('Projects Container', () => {
       })
     })
 
-    it('should call fetchOptionsCreator with a method and body', () => {
+    it('should call fetchOptionsCreator with a method and body', async () => {
+      const mockEvent = { preventDefault: jest.fn() }
+      const projectName = "Unique Project Name"
+
+      wrapper.setState({
+        project_name: projectName
+      })
+
+      wrapper.instance().addNewProject(mockEvent)
+
+      expect(fetchOptionsCreator).toHaveBeenCalledWith('POST', { project_name: projectName} )
+    })
+
+    it.skip('should call postNewProject with options and projectName as arguments', () => {
+      const mockEvent = { preventDefault: jest.fn() }
     })
 
   })
