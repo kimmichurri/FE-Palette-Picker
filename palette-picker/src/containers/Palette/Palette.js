@@ -8,8 +8,8 @@ export class Palette extends Component {
   handleToggle = (e) => {
     const colorId = parseInt(e.target.id)
     const updatedColors = this.props.currentColors.map((color, index) => {
-      if (index == colorId) {
-        return { color: color.color , locked: !color.locked}
+      if (index === colorId) {
+        return { color: color.color , locked: !color.locked }
       } else {
         return color
       }

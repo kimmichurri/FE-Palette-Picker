@@ -12,3 +12,8 @@ export const storeColors = (colors) => ({
   type: 'STORE_COLORS',
   colors
 })
+
+export const addProject = (newProject) => ({
+  type: 'ADD_PROJECT',
+  newProject
+})
