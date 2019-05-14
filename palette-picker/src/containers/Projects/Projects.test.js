@@ -67,8 +67,13 @@ describe('Projects Container', () => {
       expect(fetchOptionsCreator).toHaveBeenCalledWith('POST', { project_name: projectName} )
     })
 
-    it.skip('should call postNewProject with options and projectName as arguments', () => {
+    it.skip('should call postNewProject with options and projectName as arguments', async () => {
       const mockEvent = { preventDefault: jest.fn() }
+      const mockOptions = ('POST', { project_name: "Unique Project Name" } )
+
+      wrapper.instance().addNewProject(mockEvent)
+
+      expect(wrapper.instance().props.postNewProject).toHaveBeenCalledWith(mockOptions, "Unique Project Name")
     })
 
   })
