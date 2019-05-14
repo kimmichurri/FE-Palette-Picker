@@ -27,7 +27,7 @@ export class Projects extends Component {
 
   render() {
     const projectsToDisplay = this.props.projects.map(project => {
-      return <h3>{project.project_name}</h3>
+      return <h3 key={project.project_name}>{project.project_name}</h3>
     })
     return(
       <div>
