@@ -19,6 +19,18 @@ export class Palette extends Component {
       color_5: ''
     }
   }
+  
+  updateColors = () => {
+    const updatedColors = this.props.currentColors.map(color => {
+      if (color.locked) {
+        return color
+      } else {
+        const newColor = Math.floor(Math.random()*16777215).toString(16)
+        return { color: `#${newColor}`, locked: false }
+      }
+    })
+    this.props.storeColors(updatedColors)
+  }
 
   handleToggle = (e) => {
     const colorId = parseInt(e.target.id)
