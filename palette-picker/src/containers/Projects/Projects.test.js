@@ -4,20 +4,55 @@ import { shallow } from 'enzyme';
 
 describe('Projects Container', () => {
   describe('Projects', () => {
-    it('should match the snapshot', () => {
+    let wrapper;
+    const mockState = {
+      project_name: '',
+      project_id: 0
+    }
+    const mockProjects = [
+      { project_id: 1,
+        project_name: "Travel App",
+        created_at: "2019-05-10T17:45:09.612Z",
+        updated_at: "2019-05-10T17:45:09.612Z"
+      },
+      { project_id: 2,
+        project_name: "Fitness App",
+        created_at: "2019-05-10T17:45:09.634Z",
+        updated_at: "2019-05-10T17:45:09.634Z"
+      }
+    ]
+    let mockPostNewProject;
 
+    beforeEach(() => {
+      mockPostNewProject = jest.fn()
+      wrapper = shallow(
+        <Projects 
+          projects={mockProjects}
+          postNewProject={mockPostNewProject}
+        />
+      )
     })
 
-    it('should have default state', () => {
+    it('should match the snapshot', () => {
+      expect(wrapper.debug()).toMatchSnapshot()
+    })
 
+    it('should have proper default state', () => {
+        expect(wrapper.state()).toEqual(mockState)
     })
 
     it('should set state with a project name', () => {
+      const mockEvent = { target: { name : "project_name", value: "MyNewProject" } }
+      
+      wrapper.instance().updateProjectName(mockEvent)
 
+      expect(wrapper.state()).toEqual({
+        project_name: "MyNewProject",
+        project_id: 0
+      })
     })
 
     it('should call fetchOptionsCreator with a method and body', () => {
-
     })
 
   })
