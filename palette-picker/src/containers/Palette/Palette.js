@@ -80,11 +80,12 @@ export class Palette extends Component {
           </button>
         </h2>
         <select value={this.state.project_id} name="project_id" onChange={this.handleChange}>
+          <option value="0" disable selected default>Select a Project</option>
           {projectList}
         </select>
         <form onSubmit={this.setPalette}>
           <input type="text" onChange={this.handleChange} value={this.state.palette_name} name="palette_name" />
-          <button className="palette-button">Save Palette to Project</button>
+          <button className="palette-button" disabled={this.state.project_id == 0}>Save Palette to Project</button>
         </form>
         {colorSwatches}
       </div>
