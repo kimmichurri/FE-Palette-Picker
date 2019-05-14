@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Color from '../Color/Color';
 import { storeColors } from '../../actions';
+import generate from '../../assets/generate.png';
 
 export class Palette extends Component {
 
@@ -23,6 +24,11 @@ export class Palette extends Component {
     })
     return(
       <div className="colors-wrapper">
+        <h2>Generate New Palette
+          <button onClick={this.updateColors}>
+            <img src={generate} alt={'Generate New Palette icon'} />
+          </button>
+        </h2>
         {colorSwatches}
       </div>
     )

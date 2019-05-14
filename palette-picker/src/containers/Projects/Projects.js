@@ -33,7 +33,7 @@ export class Projects extends Component {
       <div>
       <form onSubmit={this.addNewProject}>
         <input type="text" onChange={this.updateProjectName} value={this.state.project_name} name="project_name" />
-        <button>Add New Project</button>
+        <button className="project-button">Add New Project</button>
       </form>
       {projectsToDisplay}
       </div>

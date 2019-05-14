@@ -34,3 +34,20 @@ h1 {
   border: 2px solid hotpink;
   background-color: yellow
 }
+
+input {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 10px;
+  height: 25px;
+  width: 200px
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background: transparent;
+  font-size: 18px;
+  font-family: $font-main;
+}
