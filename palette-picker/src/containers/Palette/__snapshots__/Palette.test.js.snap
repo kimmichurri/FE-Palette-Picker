@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Palette Container Palette should match the snapshot 1`] = `
+"<div>
+  <Color color=\\"#f82e41\\" locked={true} index={0} handleToggle={[Function]} />
+  <Color color=\\"#2261cd\\" locked={true} index={1} handleToggle={[Function]} />
+  <Color color=\\"#271de3\\" locked={true} index={2} handleToggle={[Function]} />
+  <Color color=\\"#1563ec\\" locked={true} index={3} handleToggle={[Function]} />
+  <Color color=\\"#9e0246\\" locked={true} index={4} handleToggle={[Function]} />
+</div>"
+`;

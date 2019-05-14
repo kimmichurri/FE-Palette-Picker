@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Projects Container Projects should match the snapshot 1`] = `
+"<div>
+  <form onSubmit={[Function]}>
+    <input type=\\"text\\" onChange={[Function]} value=\\"\\" name=\\"project_name\\" />
+    <button>
+      Add New Project
+    </button>
+  </form>
+  <h3>
+    Travel App
+  </h3>
+  <h3>
+    Fitness App
+  </h3>
+</div>"
+`;

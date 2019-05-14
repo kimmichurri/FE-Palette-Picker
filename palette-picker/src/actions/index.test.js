@@ -36,4 +36,31 @@ describe('actions', () => {
 
     expect(result).toEqual(expected)
   })
-})
+
+  it('should return a type of STORE_COLORS with an array of color objects', () => {
+    const mockColors = [
+      { color: '#37761B', locked: false }, { color: '#990000', locked: false }
+    ]
+    const expected = {
+      type: 'STORE_COLORS',
+      colors: mockColors
+    }
+
+    const result = actions.storeColors(mockColors)
+
+    expect(result).toEqual(expected)
+  })
+
+  it('should return a type of ADD_PROJECT with the new projects', () => {
+    const mockNewProject = { project_name: "Jon's project" }
+    const expected = {
+      type: 'ADD_PROJECT',
+      newProject: mockNewProject
+    }
+    
+    const result = actions.addProject(mockNewProject)
+
+    expect(result).toEqual(expected)
+  })
+
+});
