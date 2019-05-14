@@ -22,3 +22,8 @@ export const addPalette = (newPalette) => ({
   type: 'ADD_PALETTE',
   newPalette
 })
+
+export const storePalettes = (palettes) => ({
+  type: 'STORE_PALETTES',
+  palettes
+})
