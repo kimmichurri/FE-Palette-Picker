@@ -22,7 +22,7 @@ export class Palette extends Component {
       return <Color key={color.color} {...color} index={index} handleToggle={this.handleToggle} />
     })
     return(
-      <div>
+      <div className="colors-wrapper">
         {colorSwatches}
       </div>
     )

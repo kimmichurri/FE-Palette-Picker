@@ -38,16 +38,23 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Palette Picker</h1>
-        </header>
-        <h2>Generate New Palette
-          <button onClick={this.updateColors}>
-            <img src={generate} alt={'Generate New Palette icon'}/>
-          </button>
-        </h2>
-        <Palette />
-        <Projects />
+        <div className="header-project-wrapper">
+          <header className="app-header">
+            <h1>Palette Picker</h1>
+            <h2>Generate New Palette
+              <button onClick={this.updateColors}>
+                <img src={generate} alt={'Generate New Palette icon'} />
+              </button>
+            </h2>
+          </header>
+          <div className="projects-wrapper">
+            
+            <Projects />
+          </div>
+        </div>
+        <div className="palette-wrapper">
+          <Palette />
+        </div>
       </div>
     );
   }

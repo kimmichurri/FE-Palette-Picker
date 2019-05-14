@@ -1,27 +1,36 @@
 .App {
-  height: 800px;
-  width: 500px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  border: 2px solid orange;
 }
 
-.colors-wrapper {
+.header-project-wrapper {
+  border: 2px solid blue;
+  flex: 1;
+}
+
+.app-header {
+  // height: 30%;
+  border: 2px solid black;
+}
+
+h1 {
+  margin: 30px;
+  font-size: 50px;
+  font-family: $font-title;
+}
+
+.projects-wrapper {
+  background-color: purple;
+  border: 2px solid green;
+}
+
+.palette-wrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 80%;
-  width: 80%;
-}
-
-.palette-color {
-  height: 15%;
-  width: 80%;
-  margin: auto;
-  display: flex;
-  align-content: space-between
-}
-
-button {
-  border: none;
-  text-decoration: none;
-  background: transparent;
-  display: flex;
-  flex-direction: column
+  width: 100%;
+  border: 2px solid hotpink;
+  background-color: yellow
 }
