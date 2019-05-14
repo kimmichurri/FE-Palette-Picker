@@ -27,7 +27,16 @@ export class Projects extends Component {
 
   render() {
     const projectsToDisplay = this.props.projects.map((project, index) => {
-      return <h3 key={`${project.project_name}-${index}`}>{project.project_name}</h3>
+      return <div>
+        <h3 key={`${project.project_name}-${index}`}>{project.project_name}</h3>
+        {
+          this.props.palettes.map(palette => {
+            if (palette.project_id === project.project_id) {
+              return <h4>{palette.palette_name}</h4>
+            }
+          })
+        }
+      </div>
     })
     return(
       <div>
@@ -42,7 +51,8 @@ export class Projects extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  projects: state.projects
+  projects: state.projects,
+  palettes: state.palettes
 })
 
 export const mapDispatchToProps = (dispatch) => ({
