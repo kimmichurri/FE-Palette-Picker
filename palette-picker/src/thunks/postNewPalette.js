@@ -9,7 +9,6 @@ export const postNewPalette = (options, body) => {
         throw Error (response.statusText)
       }
       const result = await response.json()
-      console.log("thunk", body)
       const newPalette = {
         palette_name: body.palette_name,
         palette_id: result.palette_id, 
