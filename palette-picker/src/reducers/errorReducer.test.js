@@ -4,7 +4,7 @@ import * as actions from '../actions';
 describe('errorReducer', () => {
   const mockState = ""
 
-  it('should have default state', () => {
+  it('should return state by default', () => {
     const action = {}
 
     const result = errorReducer(mockState, action)
