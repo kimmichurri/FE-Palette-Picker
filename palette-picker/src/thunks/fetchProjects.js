@@ -1,7 +1,8 @@
 import { hasError, storeProjects } from '../actions';
 
-export const fetchProjects = (url) => {
+export const fetchProjects = () => {
   return async (dispatch) => {
+    const url = `https://palette-picker-mfjk.herokuapp.com/api/v1/projects`
     try {
       const response = await fetch(url)
       if (!response.ok) {

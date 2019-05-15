@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchProjects } from '../../thunks/fetchProjects';
+import { fetchPalettes } from '../../thunks/fetchPalettes';
 import { storeColors } from '../../actions';
 import Palette from '../Palette/Palette';
 import Projects from '../Projects/Projects';
@@ -8,8 +9,8 @@ import Projects from '../Projects/Projects';
 export class App extends Component {
 
   componentDidMount() {
-    const url = `https://palette-picker-mfjk.herokuapp.com/api/v1/projects`
-    this.props.fetchProjects(url)
+    this.props.fetchProjects()
+    this.props.fetchPalettes()
     this.generateRandomColor()
   }
 
@@ -48,8 +49,9 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  fetchProjects: (url) => dispatch(fetchProjects(url)),
-  storeColors: (colors) => dispatch(storeColors(colors))
+  fetchProjects: () => dispatch(fetchProjects()),
+  storeColors: (colors) => dispatch(storeColors(colors)),
+  fetchPalettes: () => dispatch(fetchPalettes())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
