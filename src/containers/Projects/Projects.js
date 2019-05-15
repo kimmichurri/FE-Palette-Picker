@@ -45,15 +45,15 @@ export class Projects extends Component {
 
   render() {
     const projectsToDisplay = this.props.projects.map((project, index) => {
-      return <div>
-        <h3 key={`${project.project_name}-${index}`}>{project.project_name}</h3>
+      return <div key={`${project.project_name}-${index}`}>
+        <h3>{project.project_name}</h3>
           <button onClick={this.deleteProject}>
             <img src={closeButton} alt={'Delete Project icon'} id={project.project_id}/>
           </button>
         {
-          this.props.palettes.map(palette => {
+          this.props.palettes.map((palette, index) => {
             if (palette.project_id === project.project_id) {
-              return <div>
+              return <div key={`${palette.palette_name}-${index}`}>
                 <h4>{palette.palette_name}</h4>
                 <button onClick={this.deletePalette}>
                   <img src={closeButton} alt={'Delete Palette icon'} id={palette.palette_id}/>

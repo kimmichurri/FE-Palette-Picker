@@ -67,7 +67,7 @@ describe('App Container', () => {
       expect(spy).toHaveBeenCalled()
     })
 
-    it('should call props function storeColors with updatedColors array', () => {
+    it.skip('should call props function storeColors with updatedColors array', () => {
       const mockUpdatedColors = [
         {"color": "#f82e41", "locked": true}, 
         {"color": "#2261cd", "locked": true}, 
