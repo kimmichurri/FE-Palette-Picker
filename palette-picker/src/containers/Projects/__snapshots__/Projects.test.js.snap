@@ -4,15 +4,41 @@ exports[`Projects Container Projects should match the snapshot 1`] = `
 "<div>
   <form onSubmit={[Function]}>
     <input type=\\"text\\" onChange={[Function]} value=\\"\\" name=\\"project_name\\" />
-    <button>
+    <button className=\\"project-button\\">
       Add New Project
     </button>
   </form>
-  <h3>
-    Travel App
-  </h3>
-  <h3>
-    Fitness App
-  </h3>
+  <div>
+    <h3>
+      Travel App
+    </h3>
+    <button onClick={[Function]}>
+      <img src=\\"closeButton.png\\" alt=\\"Delete Project icon\\" id={1} />
+    </button>
+    <div>
+      <h4>
+        one
+      </h4>
+      <button onClick={[Function]}>
+        <img src=\\"closeButton.png\\" alt=\\"Delete Palette icon\\" id={68} />
+      </button>
+    </div>
+    <div>
+      <h4>
+        two
+      </h4>
+      <button onClick={[Function]}>
+        <img src=\\"closeButton.png\\" alt=\\"Delete Palette icon\\" id={68} />
+      </button>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Fitness App
+    </h3>
+    <button onClick={[Function]}>
+      <img src=\\"closeButton.png\\" alt=\\"Delete Project icon\\" id={2} />
+    </button>
+  </div>
 </div>"
 `;

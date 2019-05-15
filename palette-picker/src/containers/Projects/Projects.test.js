@@ -6,7 +6,7 @@ jest.mock('../../utils/fetchOptionsCreator');
 
 describe('Projects Container', () => {
   describe('Projects', () => {
-    let wrapper;
+    let wrapper
     const mockState = {
       project_name: '',
       project_id: 0
@@ -23,14 +23,48 @@ describe('Projects Container', () => {
         updated_at: "2019-05-10T17:45:09.634Z"
       }
     ]
-    let mockPostNewProject;
+    const mockPalettes = [
+      {
+          palette_name: "one",
+          palette_id: 68,
+          project_id: 1,
+          color_1: "#605976",
+          color_2: "#3241f2",
+          color_3: "#dc677",
+          color_4: "#1c1eb5",
+          color_5: "#c54e8b"
+      },
+      {
+        palette_name: "two",
+        palette_id: 68,
+        project_id: 1,
+        color_1: "#c54e8b",
+        color_2: "#3241f2",
+        color_3: "#dc677",
+        color_4: "#1c1eb5",
+        color_5: "#605976"
+      }]
+    let mockPostNewProject
+    let mockStorePalettes
+    let mockDeletePalette
+    let mockStoreProjects
+    let mockDeleteProject
 
     beforeEach(() => {
       mockPostNewProject = jest.fn()
+      mockStorePalettes = jest.fn()
+      mockDeletePalette = jest.fn()
+      mockStoreProjects = jest.fn()
+      mockDeleteProject = jest.fn()
       wrapper = shallow(
         <Projects 
           projects={mockProjects}
+          palettes={mockPalettes}
           postNewProject={mockPostNewProject}
+          storePalettes={mockStorePalettes}
+          deletePalette={mockDeletePalette}
+          storeProjects={mockStoreProjects}
+          delteProject={mockDeleteProject}
         />
       )
     })
@@ -79,51 +113,177 @@ describe('Projects Container', () => {
   })
 
   describe('mapStateToProps', () => {
-    const mockState = {
-      projects: [
-        { project_id: 1,
-          project_name: "Travel App",
-          created_at: "2019-05-10T17:45:09.612Z",
-          updated_at: "2019-05-10T17:45:09.612Z"
-        },
-        { project_id: 2,
-          project_name: "Fitness App",
-          created_at: "2019-05-10T17:45:09.634Z",
-          updated_at: "2019-05-10T17:45:09.634Z"
-        }
-      ],
-      fakeState: "Not real state to return"
-    }
-    const expected = {
-      projects: [
-        { project_id: 1,
-          project_name: "Travel App",
-          created_at: "2019-05-10T17:45:09.612Z",
-          updated_at: "2019-05-10T17:45:09.612Z"
-        },
-        { project_id: 2,
-          project_name: "Fitness App",
-          created_at: "2019-05-10T17:45:09.634Z",
-          updated_at: "2019-05-10T17:45:09.634Z"
-        }
-      ]
-    }
+    it('should return the expected props to state', () => {
 
-    const mappedProps = mapStateToProps(mockState)
-    expect(mappedProps).toEqual(expected)
+      const mockState = {
+        projects: [
+          { project_id: 1,
+            project_name: "Travel App",
+            created_at: "2019-05-10T17:45:09.612Z",
+            updated_at: "2019-05-10T17:45:09.612Z"
+          },
+          { project_id: 2,
+            project_name: "Fitness App",
+            created_at: "2019-05-10T17:45:09.634Z",
+            updated_at: "2019-05-10T17:45:09.634Z"
+          }
+        ],
+        palettes: [
+          {
+              palette_name: "one",
+              palette_id: 68,
+              project_id: 1,
+              color_1: "#605976",
+              color_2: "#3241f2",
+              color_3: "#dc677",
+              color_4: "#1c1eb5",
+              color_5: "#c54e8b"
+          },
+          {
+            palette_name: "two",
+            palette_id: 68,
+            project_id: 1,
+            color_1: "#c54e8b",
+            color_2: "#3241f2",
+            color_3: "#dc677",
+            color_4: "#1c1eb5",
+            color_5: "#605976"
+          }],
+        fakeState: "Not real state to return"
+      }
+      const expected = {
+        projects: [
+          { project_id: 1,
+            project_name: "Travel App",
+            created_at: "2019-05-10T17:45:09.612Z",
+            updated_at: "2019-05-10T17:45:09.612Z"
+          },
+          { project_id: 2,
+            project_name: "Fitness App",
+            created_at: "2019-05-10T17:45:09.634Z",
+            updated_at: "2019-05-10T17:45:09.634Z"
+          }
+        ],
+        palettes: [
+          {
+              palette_name: "one",
+              palette_id: 68,
+              project_id: 1,
+              color_1: "#605976",
+              color_2: "#3241f2",
+              color_3: "#dc677",
+              color_4: "#1c1eb5",
+              color_5: "#c54e8b"
+          },
+          {
+            palette_name: "two",
+            palette_id: 68,
+            project_id: 1,
+            color_1: "#c54e8b",
+            color_2: "#3241f2",
+            color_3: "#dc677",
+            color_4: "#1c1eb5",
+            color_5: "#605976"
+          }]
+      }
+  
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    })
   })
 
   describe('mapDispatchToProps', () => {
-    const mockUrl = 'www.projects.com'
-    const mockBody = { project_name: "Harold's Project" }
-    const mockDispatch = jest.fn()
-    const postNewProject = jest.fn()
-    const actionToDispatch = postNewProject(mockUrl, mockBody)
-    const mappedProps = mapDispatchToProps(mockDispatch)
+    it('should dispatch postNewProject with a url and body', () => {
+      const mockUrl = 'www.projects.com'
+      const mockBody = { project_name: "Harold's Project" }
+      const mockDispatch = jest.fn()
+      const postNewProject = jest.fn()
+      const actionToDispatch = postNewProject(mockUrl, mockBody)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+  
+      mappedProps.postNewProject(mockUrl, mockBody)
+  
+      expect(mockDispatch).toHaveBeenCalled(actionToDispatch)
+    })
 
-    mappedProps.postNewProject(mockUrl, mockBody)
+    it('should dispatch storePalettes with updated palettes', () => {
+      const mockDispatch = jest.fn()
+      const storePalettes = jest.fn()
+      const mockUpdatedPalettes = [
+        {
+          palette_name: "one",
+          palette_id: 68,
+          project_id: 1,
+          color_1: "#605976",
+          color_2: "#3241f2",
+          color_3: "#dc677",
+          color_4: "#1c1eb5",
+          color_5: "#c54e8b"
+        },
+        {
+          palette_name: "two",
+          palette_id: 68,
+          project_id: 1,
+          color_1: "#c54e8b",
+          color_2: "#3241f2",
+          color_3: "#dc677",
+          color_4: "#1c1eb5",
+          color_5: "#605976"
+        }]
+      const actionToDispatch = storePalettes(mockUpdatedPalettes)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      
+      mappedProps.storePalettes(mockUpdatedPalettes)
 
-    expect(mockDispatch).toHaveBeenCalled(actionToDispatch)
+      expect(mockDispatch).toHaveBeenCalled(actionToDispatch)      
+      })
+
+      it('should dispatch deletePalette with an id', () => {
+        const mockPaletteId = 187
+        const mockDispatch = jest.fn()
+        const deletePalette = jest.fn()
+        const actionToDispatch = deletePalette(mockPaletteId)
+        const mappedProps = mapDispatchToProps(mockDispatch)
+
+        mappedProps.deletePalette(mockPaletteId)
+
+        expect(mockDispatch).toHaveBeenCalled(actionToDispatch)      
+      })
+
+      it('should dispatch storeProjects with udpdated projects', () => {
+        const mockUpdatedProjects = [
+          { project_id: 1,
+            project_name: "Travel App",
+            created_at: "2019-05-10T17:45:09.612Z",
+            updated_at: "2019-05-10T17:45:09.612Z"
+          },
+          { project_id: 2,
+            project_name: "Fitness App",
+            created_at: "2019-05-10T17:45:09.634Z",
+            updated_at: "2019-05-10T17:45:09.634Z"
+          }
+        ]
+        const mockDispatch = jest.fn()
+        const storeProjects = jest.fn()
+        const actionToDispatch = storeProjects(mockUpdatedProjects)
+        const mappedProps = mapDispatchToProps(mockDispatch)
+
+        mappedProps.storeProjects(mockUpdatedProjects)
+
+        expect(mockDispatch).toHaveBeenCalled(actionToDispatch)      
+      })
+
+      it('should dispatch deleteProject with an id', () => {
+        const mockProjectId = 817
+        const mockDispatch = jest.fn()
+        const deleteProject = jest.fn()
+        const actionToDispatch = deleteProject(mockProjectId)
+        const mappedProps = mapDispatchToProps(mockDispatch)
+
+        mappedProps.deleteProject(mockProjectId)
+
+        expect(mockDispatch).toHaveBeenCalled(actionToDispatch)
+      })
   })
   
 })
