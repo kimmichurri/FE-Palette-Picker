@@ -3,8 +3,8 @@ import { fetchOptionsCreator } from '../utils/fetchOptionsCreator';
 
 export const deletePalette = (id) => {
   return async (dispatch) => {
-    const baseUrl = process.env.REACT_APP_BACKEND_URL
-    const url = `${baseUrl}/api/v1/palettes/${id}`
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/v1/palettes/${id}`
+    console.log("url", url)
     try {
       const options = fetchOptionsCreator('DELETE')
       const response = await fetch(url, options)
