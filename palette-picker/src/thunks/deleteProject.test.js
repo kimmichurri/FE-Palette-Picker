@@ -1,23 +1,19 @@
-import { deletePalette } from './deletePalette';
+import { deleteProject } from './deleteProject';
 import { fetchOptionsCreator } from '../utils/fetchOptionsCreator';
 import { hasError } from '../actions';
 
-describe('deletePalette', () => {
+describe('deleteProject', () => {
   let mockUrl
-  let mockPalette 
+  let mockProject
   let mockDispatch
 
   beforeEach(() => {
-    mockUrl = 'www.palettes.com'
-    mockPalette = {
-      palette_name: "one",
-      palette_id: 68,
+    mockUrl = 'www.projects.com'
+    mockProject = { 
       project_id: 1,
-      color_1: "#605976",
-      color_2: "#3241f2",
-      color_3: "#dc677",
-      color_4: "#1c1eb5",
-      color_5: "#c54e8b"
+      project_name: "Travel App",
+      created_at: "2019-05-10T17:45:09.612Z",
+      updated_at: "2019-05-10T17:45:09.612Z"
     }
     mockDispatch = jest.fn()
   })
@@ -28,7 +24,7 @@ describe('deletePalette', () => {
       statusText: 'Something went wrong'
     }));
 
-    const thunk = await deletePalette(mockPalette.palette_id)
+    const thunk = await deleteProject(mockProject.project_id)
 
     await thunk(mockDispatch)
 
