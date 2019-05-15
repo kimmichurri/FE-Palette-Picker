@@ -63,4 +63,29 @@ describe('actions', () => {
     expect(result).toEqual(expected)
   })
 
+  it('should return a type of ADD_PALETTE with a new palette', () => {
+    const mockNewPalette = {
+      palette_name: "faefae",
+      palette_id: 68,
+      project_id: 1,
+      color_1: "#605976",
+      color_2: "#3241f2",
+      color_3: "#dc677",
+      color_4: "#1c1eb5",
+      color_5: "#c54e8b"
+    }
+    const expected = {
+      type: 'ADD_PALETTE',
+      newPalette: mockNewPalette
+    }
+
+    const result = actions.addPalette(mockNewPalette)
+
+    expect(result).toEqual(expected)
+  })
+
+  it('should return a type of STORE_PALETTES with an array of palettes', () => {
+    
+  })
+
 });
