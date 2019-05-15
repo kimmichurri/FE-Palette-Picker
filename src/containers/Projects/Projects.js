@@ -52,12 +52,22 @@ export class Projects extends Component {
           </button>
         {
           this.props.palettes.map((palette, index) => {
+            console.log(palette)
             if (palette.project_id === project.project_id) {
               return <div className="project-palettes" key={`${palette.palette_name}-${index}`}>
-                <h5>{palette.palette_name}</h5>
-                <button onClick={this.deletePalette}>
-                  <img className="delete-palette-button" src={closeButton} alt={'Delete Palette icon'} id={palette.palette_id}/>
-                </button>
+                <div className="palette-header">
+                  <h5>{palette.palette_name}</h5>
+                    <button onClick={this.deletePalette}>
+                      <img className="delete-palette-button" src={closeButton} alt={'Delete Palette icon'} id={palette.palette_id}/>
+                    </button>
+                </div>  
+                <div className="palette-colors">
+                  <div className="small-palette color_1" style={{ backgroundColor: palette.color_1 }}></div>
+                  <div className="small-palette color_2" style={{ backgroundColor: palette.color_2 }}></div>
+                  <div className="small-palette color_3" style={{ backgroundColor: palette.color_3 }}></div>
+                  <div className="small-palette color_4" style={{ backgroundColor: palette.color_4 }}></div>
+                  <div className="small-palette color_5" style={{ backgroundColor: palette.color_5 }}></div>
+                </div>
               </div>
             }
           })

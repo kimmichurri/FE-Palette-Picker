@@ -7,14 +7,13 @@
   display: flex;
   border: 2px solid lightgrey;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 15px;
 }
 
 .project-palettes {
-  display: flex;
-  flex-flow: nowrap;
-  border-radius: 5px;
+  // display: flex;
+  border-radius: 10px;
   border: 2px solid lightgrey;
   margin: 10px;
   width: 125px;
@@ -22,6 +21,30 @@
   background-color: white;
 }
 
+.palette-header {
+  display: flex;
+}
+
+h5 {
+  flex: 1;
+}
+
+.palette-header button {
+  flex: 1;
+  flex-direction: row-reverse;
+}
+
 .delete-palette-button {
   width: 20px;
+  height: 20px;
+}
+
+.palette-colors {
+  display: flex;
+}
+
+.small-palette {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black
 }
