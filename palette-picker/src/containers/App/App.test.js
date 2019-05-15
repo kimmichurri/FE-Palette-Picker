@@ -3,6 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 jest.mock('../../thunks/fetchProjects')
+jest.mock('../../thunks/fetchPalettes')
 
 describe('App Container', () => {
   describe('App', () => {
@@ -29,10 +30,12 @@ describe('App Container', () => {
     ]
     let mockFetchProjects
     let mockStoreColors
+    let mockFetchPalettes
     
     beforeEach(() => {
       mockFetchProjects = jest.fn().mockImplementation(() => Promise.resolve({mockProjects}))
       mockStoreColors = jest.fn().mockImplementation(() => Promise.resolve({mockCurrentColors}))
+      mockFetchPalettes = jest.fn()
       wrapper = shallow(
         <App 
           error={mockError}
@@ -40,6 +43,7 @@ describe('App Container', () => {
           fetchProjects={mockFetchProjects}
           currentColors={mockCurrentColors}
           storeColors={mockStoreColors}
+          fetchPalettes={mockFetchPalettes}
         />
       )
     })
@@ -49,10 +53,10 @@ describe('App Container', () => {
     })
 
     it('should invoke fetchProjects on componentDidMount', () => {
-      const mockUrl = 'https://palette-picker-mfjk.herokuapp.com/api/v1/projects'
       wrapper.instance().componentDidMount()
+      
+      expect(mockFetchProjects).toHaveBeenCalled()
 
-      expect(mockFetchProjects).toHaveBeenCalledWith(mockUrl)
     })
 
     it('should invoke generateRandomColor on componentDidMount', () => {
@@ -150,6 +154,17 @@ describe('App Container', () => {
       const mappedProps = mapDispatchToProps(mockDispatch)
 
       mappedProps.storeColors(mockColors)
+
+      expect(mockDispatch).toHaveBeenCalled(actionToDispatch)
+    })
+
+    it('should dispatch fetchPalettes', () => {
+      const mockDispatch = jest.fn()
+      const fetchPalettes = jest.fn()
+      const actionToDispatch = fetchPalettes()
+      const mappedProps = mapDispatchToProps(mockDispatch)
+
+      mappedProps.fetchPalettes()
 
       expect(mockDispatch).toHaveBeenCalled(actionToDispatch)
     })

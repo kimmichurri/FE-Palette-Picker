@@ -105,15 +105,15 @@ describe('actions', () => {
       color_3: "#dc677",
       color_4: "#1c1eb5",
       color_5: "#605976"
-  }]
-  const expected = {
+    }]
+    const expected = {
     type: 'STORE_PALETTES',
     palettes: mockPalettes
-  }
+    }
 
-  const result = actions.storePalettes(mockPalettes)
+    const result = actions.storePalettes(mockPalettes)
 
-  expect(result).toEqual(expected)
+    expect(result).toEqual(expected)
   })
 
 });
