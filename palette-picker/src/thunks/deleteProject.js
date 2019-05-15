@@ -11,7 +11,6 @@ export const deleteProject = (id) => {
         throw Error (response.statusText)
       }
       const result = await response.json()
-      console.log(result)
     } catch(error) {
       dispatch(hasError(error.message))
     }
