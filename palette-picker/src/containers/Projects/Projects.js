@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchOptionsCreator } from '../../utils/fetchOptionsCreator';
 import { postNewProject } from '../../thunks/postNewProject';
+import closeButton from '../../assets/closeButton.png';
+import { storePalettes } from '../../actions';
+import { deletePalette } from '../../thunks/deletePalette';
 
 export class Projects extends Component {
   constructor() {
@@ -25,6 +28,13 @@ export class Projects extends Component {
     this.props.postNewProject(options, projectName)
   }
 
+  deletePalette = (e) => {
+    const id = parseInt(e.target.id)
+    const updatedPalettes = this.props.palettes.filter(palette => id !== palette.palette_id)
+    this.props.storePalettes(updatedPalettes)
+    this.props.deletePalette(id)
+  }
+
   render() {
     const projectsToDisplay = this.props.projects.map((project, index) => {
       return <div>
@@ -32,7 +42,12 @@ export class Projects extends Component {
         {
           this.props.palettes.map(palette => {
             if (palette.project_id === project.project_id) {
-              return <h4>{palette.palette_name}</h4>
+              return <div>
+                <h4>{palette.palette_name}</h4>
+                <button onClick={this.deletePalette}>
+                  <img src={closeButton} alt={'Delete Palette icon'} id={palette.palette_id}/>
+                </button>
+              </div>
             }
           })
         }
@@ -56,7 +71,9 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  postNewProject: (url, body) => dispatch(postNewProject(url, body))
+  postNewProject: (url, body) => dispatch(postNewProject(url, body)),
+  storePalettes: (updatedPalettes) => dispatch(storePalettes(updatedPalettes)),
+  deletePalette: (id) => dispatch(deletePalette(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects)
