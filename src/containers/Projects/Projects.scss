@@ -1,3 +1,27 @@
-.projects {
-background-color: yellow
+.projects-to-display {
+  // display: flex;
+  border: 2px solid purple
+}
+
+.individual-projects {
+  display: flex;
+  border: 2px solid lightgrey;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.project-palettes {
+  display: flex;
+  flex-flow: nowrap;
+  border-radius: 5px;
+  border: 2px solid lightgrey;
+  margin: 10px;
+  width: 125px;
+  height: 100px;
+  background-color: white;
+}
+
+.delete-palette-button {
+  width: 20px;
 }
