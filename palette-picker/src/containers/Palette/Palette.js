@@ -44,9 +44,9 @@ export class Palette extends Component {
     this.props.storeColors(updatedColors)
   }
 
-  setPalette = async (e) => {
+  setPalette = (e) => {
     e.preventDefault()
-    await this.props.currentColors.forEach((color, index) => {
+    this.props.currentColors.forEach((color, index) => {
       let colorKey = `color_${index + 1}`
       this.setState({ [colorKey]: color.color })
     })
@@ -56,7 +56,7 @@ export class Palette extends Component {
   addNewPalette = async () => {
     const body = this.state
     const options = await fetchOptionsCreator('POST', body)
-    await this.props.postNewPalette(options, body)
+    this.props.postNewPalette(options, body)
   }
 
   handleChange = (e) => {
@@ -100,7 +100,7 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   storeColors: (colors) => dispatch(storeColors(colors)),
-  postNewPalette: (options, body) => dispatch(postNewPalette(options, body))
+  postNewPalette: (options, body) => dispatch(postNewPalette(options, body)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Palette);

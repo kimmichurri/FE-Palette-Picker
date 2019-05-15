@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { fetchOptionsCreator } from '../../utils/fetchOptionsCreator';
 import { postNewProject } from '../../thunks/postNewProject';
 import closeButton from '../../assets/closeButton.png';
-import { storePalettes } from '../../actions';
+import { storePalettes, storeProjects } from '../../actions';
 import { deletePalette } from '../../thunks/deletePalette';
+import { deleteProject } from '../../thunks/deleteProject';
 
 export class Projects extends Component {
   constructor() {
@@ -35,10 +36,20 @@ export class Projects extends Component {
     this.props.deletePalette(id)
   }
 
+  deleteProject = (e) => {
+    const id = parseInt(e.target.id)
+    const updatedProjects = this.props.projects.filter(project => id !== project.project_id)
+    this.props.storeProjects(updatedProjects)
+    this.props.deleteProject(id)
+  }
+
   render() {
     const projectsToDisplay = this.props.projects.map((project, index) => {
       return <div>
         <h3 key={`${project.project_name}-${index}`}>{project.project_name}</h3>
+          <button onClick={this.deleteProject}>
+            <img src={closeButton} alt={'Delete Project icon'} id={project.project_id}/>
+          </button>
         {
           this.props.palettes.map(palette => {
             if (palette.project_id === project.project_id) {
@@ -73,7 +84,9 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   postNewProject: (url, body) => dispatch(postNewProject(url, body)),
   storePalettes: (updatedPalettes) => dispatch(storePalettes(updatedPalettes)),
-  deletePalette: (id) => dispatch(deletePalette(id))
+  deletePalette: (id) => dispatch(deletePalette(id)),
+  storeProjects: (updatedProjects) => dispatch(storeProjects(updatedProjects)),
+  deleteProject: (id) => dispatch(deleteProject(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects)
