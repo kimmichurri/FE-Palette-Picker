@@ -1,7 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Palette Container Palette should match the snapshot 1`] = `
-"<div>
+"<div className=\\"colors-wrapper\\">
+  <h2>
+    Generate New Palette
+    <button onClick={[Function]}>
+      <img src=\\"generate.png\\" alt=\\"Generate New Palette icon\\" />
+    </button>
+  </h2>
+  <select value={0} name=\\"project_id\\" onChange={[Function]}>
+    <option value=\\"0\\" disable={true} selected={true} default={true}>
+      Select a Project
+    </option>
+    <option value={1}>
+      Travel App
+    </option>
+    <option value={2}>
+      Fitness App
+    </option>
+  </select>
+  <form onSubmit={[Function]}>
+    <input type=\\"text\\" onChange={[Function]} value=\\"\\" name=\\"palette_name\\" />
+    <button className=\\"palette-button\\" disabled={true}>
+      Save Palette to Project
+    </button>
+  </form>
   <Color color=\\"#f82e41\\" locked={true} index={0} handleToggle={[Function]} />
   <Color color=\\"#2261cd\\" locked={true} index={1} handleToggle={[Function]} />
   <Color color=\\"#271de3\\" locked={true} index={2} handleToggle={[Function]} />
