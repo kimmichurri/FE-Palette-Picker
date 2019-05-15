@@ -40,7 +40,7 @@ describe('Projects Container', () => {
     })
 
     it('should have proper default state', () => {
-        expect(wrapper.state()).toEqual(mockState)
+      expect(wrapper.state()).toEqual(mockState)
     })
 
     it('should set state with a project name', () => {

@@ -1,27 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Color Container should match the snapshot 1`] = `
-"<div className=\\"palette-color\\" style={{...}}>
-  <h3>
-    #F1C231
-  </h3>
-  <button onClick={[Function: mockConstructor]}>
-    <img className=\\"star-icon\\" id={0} src=\\"emptyStar.png\\" alt=\\"not saved icon\\" />
-  </button>
-</div>"
-`;
-
-exports[`Color Container should match the snapshot 2`] = `
-"<div className=\\"palette-color\\" style={{...}}>
-  <h3>
-    #F1C231
-  </h3>
-  <button onClick={[Function: mockConstructor]}>
-    <img className=\\"star-icon\\" id={0} src=\\"filledStar.png\\" alt=\\"not saved icon\\" />
-  </button>
-</div>"
-`;
-
 exports[`Color Container should match the snapshot if locked is false 1`] = `
 "<div className=\\"palette-color\\" style={{...}}>
   <h3>
