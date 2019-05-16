@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { storePalettes, storeProjects, setMessage } from '../../actions';
+import { storePalettes, storeProjects, setMessage, storeColors } from '../../actions';
 import closeButton from '../../assets/closeButton.png';
 import x from '../../assets/x.png';
 import { deletePalette } from '../../thunks/deletePalette';
@@ -82,6 +82,19 @@ export class Projects extends Component {
     this.props.postNewPalette(options, body)
   }
 
+  handleColorClick = (e) => {
+    const id = parseInt(e.target.id)
+    const foundPalette = this.props.palettes.find(palette => id === palette.palette_id)
+    const foundColors = [
+      { color: foundPalette.color_1, locked: false },
+      { color: foundPalette.color_2, locked: false },
+      { color: foundPalette.color_3, locked: false },
+      { color: foundPalette.color_4, locked: false },
+      { color: foundPalette.color_5, locked: false }
+    ]
+    this.props.storeColors(foundColors)
+  }
+
   render() {
     const projectList = this.props.projects.map((project, index) => {
       let projectName = project.project_name
@@ -98,7 +111,7 @@ export class Projects extends Component {
             if (palette.project_id === project.project_id) {
               return <div className="project-palettes" key={`${palette.palette_name}-${index}`}>
                 <div className="palette-header">
-                  <h5>{palette.palette_name}</h5>
+                  <h5 onClick={this.handleColorClick} id={palette.palette_id} >{palette.palette_name}</h5>
                     <button onClick={this.deletePalette} >
                       <img className="delete-palette-button" src={closeButton} alt={'Delete Palette icon'} id={palette.palette_id}/>
                     </button>
@@ -178,7 +191,8 @@ export const mapDispatchToProps = (dispatch) => ({
   storeProjects: (updatedProjects) => dispatch(storeProjects(updatedProjects)),
   deleteProject: (id) => dispatch(deleteProject(id)),
   setMessage: (message) => dispatch(setMessage(message)),
-  postNewPalette: (options, body) => dispatch(postNewPalette(options, body))
+  postNewPalette: (options, body) => dispatch(postNewPalette(options, body)),
+  storeColors: (foundColors) => dispatch(storeColors(foundColors))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects)
