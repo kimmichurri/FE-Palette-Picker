@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchOptionsCreator } from '../../utils/fetchOptionsCreator';
 import { postNewProject } from '../../thunks/postNewProject';
 import closeButton from '../../assets/closeButton.png';
+import x from '../../assets/x.png';
 import { storePalettes, storeProjects, setMessage } from '../../actions';
 import { deletePalette } from '../../thunks/deletePalette';
 import { deleteProject } from '../../thunks/deleteProject';
@@ -53,17 +54,17 @@ export class Projects extends Component {
   render() {
     const projectsToDisplay = this.props.projects.map((project, index) => {
       return <div className="individual-projects" key={`${project.project_name}-${index}`}>
-        <h3 className="project-title">{project.project_name}</h3>
-          <button onClick={this.deleteProject} >
-            <img className="delete-project-button" src={closeButton} alt={'Delete Project icon'} id={project.project_id}/>
+          <button className="delete-me" onClick={this.deleteProject} >
+            <img className="delete-project-button" src={x} alt={'Delete Project icon'} id={project.project_id}/>
           </button>
+        <h3 className="project-title">{project.project_name}</h3>
         {
           this.props.palettes.map((palette, index) => {
             if (palette.project_id === project.project_id) {
               return <div className="project-palettes" key={`${palette.palette_name}-${index}`}>
                 <div className="palette-header">
                   <h5>{palette.palette_name}</h5>
-                    <button onClick={this.deletePalette}>
+                    <button onClick={this.deletePalette} >
                       <img className="delete-palette-button" src={closeButton} alt={'Delete Palette icon'} id={palette.palette_id}/>
                     </button>
                 </div>  

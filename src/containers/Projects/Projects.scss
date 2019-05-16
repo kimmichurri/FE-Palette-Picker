@@ -3,10 +3,12 @@
   font-size: 40px;
   padding: 20px;
 }
+
 .projects-to-display {
   border: none;
   background-color: whitesmoke;
   border-radius: 25px;
+  box-shadow: 2px 1px 1px #dcdcdc;
 }
 
 .individual-projects {
@@ -16,11 +18,21 @@
   min-height: 200px;
 }
 
+.delete-me {
+  // align-self: flex-end;
+  // justify-content: center;
+  // margin: auto;
+}
+
 .project-palettes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 10px;
   width: 125px;
-  height: 100px;
+  height: 130px;
   background-color: white;
+  box-shadow: 6px 5px 5px #dcdcdc;
 }
 
 .palette-header {
@@ -46,7 +58,7 @@ h5 {
 
 .palette-colors {
   display: flex;
-  box-shadow: 10px 5px 5px black;
+  // box-shadow: 10px 5px 5px black;
 }
 
 .small-palette {
