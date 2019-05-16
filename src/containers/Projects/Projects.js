@@ -24,9 +24,14 @@ export class Projects extends Component {
   addNewProject = async (e) => {
     e.preventDefault()
     const projectName = this.state.project_name
-    const body = { project_name: projectName }
-    const options = await fetchOptionsCreator('POST', body)
-    this.props.postNewProject(options, projectName)
+    const foundIndex = this.props.projects.findIndex(project => project.project_name === projectName)
+    if (foundIndex === -1) {
+      const body = { project_name: projectName }
+      const options = await fetchOptionsCreator('POST', body)
+      this.props.postNewProject(options, projectName)
+    } else {
+      console.log('name is taken')
+    }
   }
 
   deletePalette = (e) => {
