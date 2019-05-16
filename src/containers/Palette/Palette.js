@@ -25,7 +25,7 @@ export class Palette extends Component {
       if (color.locked) {
         return color
       } else {
-        const newColor = Math.floor(Math.random()*16777215).toString(16)
+        const newColor = Math.random().toString(16).slice(2, 8).toUpperCase()
         return { color: `#${newColor}`, locked: false }
       }
     })
