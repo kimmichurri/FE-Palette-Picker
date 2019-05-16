@@ -1,14 +1,13 @@
 import { deletePalette } from './deletePalette';
-import { fetchOptionsCreator } from '../utils/fetchOptionsCreator';
-import { hasError } from '../actions';
+import { hasError, setMessage } from '../actions';
 
 describe('deletePalette', () => {
-  let mockUrl
   let mockPalette 
   let mockDispatch
+  let mockMessage
 
   beforeEach(() => {
-    mockUrl = 'www.palettes.com'
+    mockMessage = 'Deleted palette with id 68'
     mockPalette = {
       palette_name: "one",
       palette_id: 68,
@@ -20,6 +19,19 @@ describe('deletePalette', () => {
       color_5: "#c54e8b"
     }
     mockDispatch = jest.fn()
+  })
+
+  it('should dispatch setMessage if the response is okay', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(mockMessage)
+    }));
+
+    const thunk = await deletePalette(mockPalette.palette_id)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(setMessage('Deleted palette with id 68'))
   })
 
   it('should dispatch hasError if the response is not okay', async () => {
