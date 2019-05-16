@@ -18,12 +18,6 @@
   min-height: 200px;
 }
 
-.delete-me {
-  // align-self: flex-end;
-  // justify-content: center;
-  // margin: auto;
-}
-
 .project-palettes {
   display: flex;
   flex-direction: column;
@@ -56,9 +50,12 @@ h5 {
   height: 20px;
 }
 
+.palette-button {
+  margin: 15px;
+}
+
 .palette-colors {
   display: flex;
-  // box-shadow: 10px 5px 5px black;
 }
 
 .small-palette {
@@ -79,4 +76,12 @@ h5 {
 .project-title {
   width: 50px;
   margin: 15px;
+}
+
+.drop-down {
+  margin-left: 15px;
+  height: 40px;
+  width: 300px;
+  background-color: #dcdcdc;
+  border: none;
 }

@@ -127,7 +127,7 @@ export class Projects extends Component {
         )}
         </div>
       </form>
-      <select value={this.state.project_id} name="project_id" onChange={this.handleChange}>
+      <select className="drop-down" value={this.state.project_id} name="project_id" onChange={this.handleChange}>
         <option value="0" disable="true" select="true" default>Select a Project</option>
         {projectList}
       </select>

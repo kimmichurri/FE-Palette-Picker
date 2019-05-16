@@ -1,7 +1,8 @@
 .palette-color {
+  display: flex;
   height: 100px;
   margin: 0;
-  align-content: space-between;
+  justify-content: space-between;
 }
 
 button {
@@ -15,5 +16,14 @@ button {
 .indiv-color-text {
   font-family: $font-title;
   font-weight: bolder;
+}
+
+.star-icon {
+  align-self: flex-end;
+}
+
+.indiv-color-text,
+.star-icon {
+  padding: 20px;
 }
 
