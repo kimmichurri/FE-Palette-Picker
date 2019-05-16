@@ -52,7 +52,6 @@ export class Projects extends Component {
           </button>
         {
           this.props.palettes.map((palette, index) => {
-            console.log(palette)
             if (palette.project_id === project.project_id) {
               return <div className="project-palettes" key={`${palette.palette_name}-${index}`}>
                 <div className="palette-header">

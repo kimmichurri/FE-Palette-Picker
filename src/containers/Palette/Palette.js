@@ -52,7 +52,7 @@ export class Palette extends Component {
     })
     this.addNewPalette()
   }
-
+  
   addNewPalette = async () => {
     const body = this.state
     const options = await fetchOptionsCreator('POST', body)
@@ -80,7 +80,7 @@ export class Palette extends Component {
           </button>
         </h2>
         <select value={this.state.project_id} name="project_id" onChange={this.handleChange}>
-          <option value="0" disable selected default>Select a Project</option>
+          <option value="0" disable="true" select="true" default>Select a Project</option>
           {projectList}
         </select>
         <form onSubmit={this.setPalette}>
