@@ -21,7 +21,7 @@ describe('deletePalette', () => {
     mockDispatch = jest.fn()
   })
 
-  it('should dispatch setMessage if the response is okay', async () => {
+  it.skip('should dispatch setMessage if the response is okay', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve(mockMessage)

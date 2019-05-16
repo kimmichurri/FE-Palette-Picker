@@ -1,46 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Projects Container Projects should match the snapshot 1`] = `
-"<div className=\\"projects\\">
-  <form onSubmit={[Function]}>
-    <input type=\\"text\\" onChange={[Function]} value=\\"\\" name=\\"project_name\\" />
-    <button className=\\"project-button\\">
-      Add New Project
-    </button>
-    <div className=\\"message-container\\">
-      <p className=\\"user-message\\">
-        Something went wrong
+"<div>
+  <div className=\\"projects\\">
+    <form onSubmit={[Function]}>
+      <p className=\\"new-project-name\\">
+        New project name:
       </p>
+      <input type=\\"text\\" onChange={[Function]} value=\\"\\" name=\\"project_name\\" />
+      <button className=\\"project-button\\">
+        Add New Project
+      </button>
+      <div className=\\"message-container\\">
+        <p className=\\"user-message\\">
+          Something went wrong
+        </p>
+      </div>
+    </form>
+    <div>
+      <p className=\\"save-to-existing\\">
+        Save to an existing Project:
+      </p>
+      <select className=\\"drop-down\\" value={0} name=\\"project_id\\" onChange={[Function]}>
+        <option value=\\"0\\" disable=\\"true\\" select=\\"true\\" default={true}>
+          Select a Project
+        </option>
+        <option value={1}>
+          Travel App
+        </option>
+        <option value={2}>
+          Fitness App
+        </option>
+      </select>
+      <form onSubmit={[Function]}>
+        <input type=\\"text\\" onChange={[Function]} value=\\"\\" name=\\"palette_name\\" />
+        <button className=\\"palette-button\\" disabled={true}>
+          Save Palette to Project
+        </button>
+      </form>
     </div>
-  </form>
-  <select value={0} name=\\"project_id\\" onChange={[Function]}>
-    <option value=\\"0\\" disable=\\"true\\" select=\\"true\\" default={true}>
-      Select a Project
-    </option>
-    <option value={1}>
-      Travel App
-    </option>
-    <option value={2}>
-      Fitness App
-    </option>
-  </select>
-  <form onSubmit={[Function]}>
-    <input type=\\"text\\" onChange={[Function]} value=\\"\\" name=\\"palette_name\\" />
-    <button className=\\"palette-button\\" disabled={true}>
-      Save Palette to Project
-    </button>
-  </form>
+  </div>
   <div className=\\"projects-to-display\\">
     <p className=\\"my-projects-title\\">
       my projects
     </p>
     <div className=\\"individual-projects\\">
+      <button className=\\"delete-me\\" onClick={[Function]}>
+        <img className=\\"delete-project-button\\" src=\\"x.png\\" alt=\\"Delete Project icon\\" id={1} />
+      </button>
       <h3 className=\\"project-title\\">
         Travel App
       </h3>
-      <button onClick={[Function]}>
-        <img className=\\"delete-project-button\\" src=\\"closeButton.png\\" alt=\\"Delete Project icon\\" id={1} />
-      </button>
       <div className=\\"project-palettes\\">
         <div className=\\"palette-header\\">
           <h5>
@@ -77,12 +87,12 @@ exports[`Projects Container Projects should match the snapshot 1`] = `
       </div>
     </div>
     <div className=\\"individual-projects\\">
+      <button className=\\"delete-me\\" onClick={[Function]}>
+        <img className=\\"delete-project-button\\" src=\\"x.png\\" alt=\\"Delete Project icon\\" id={2} />
+      </button>
       <h3 className=\\"project-title\\">
         Fitness App
       </h3>
-      <button onClick={[Function]}>
-        <img className=\\"delete-project-button\\" src=\\"closeButton.png\\" alt=\\"Delete Project icon\\" id={2} />
-      </button>
     </div>
   </div>
 </div>"

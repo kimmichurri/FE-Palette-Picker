@@ -2,10 +2,10 @@
 
 exports[`Palette Container Palette should match the snapshot 1`] = `
 "<div className=\\"colors-wrapper\\">
-  <h2>
-    Generate New Palette
+  <h2 className=\\"generate-palette-text\\">
+    generate new palette
     <button onClick={[Function]}>
-      <img src=\\"generate.png\\" alt=\\"Generate New Palette icon\\" />
+      <img className=\\"generate-button\\" src=\\"generate.png\\" alt=\\"Generate New Palette icon\\" />
     </button>
   </h2>
   <Color color=\\"#f82e41\\" locked={true} index={0} handleToggle={[Function]} />
