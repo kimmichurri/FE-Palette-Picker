@@ -29,6 +29,8 @@ cd into directory and run npm install: `$ npm install`
 
 launch in your browser: `$ npm start `
 
+to test and see test coverage: `$ npm t -- --coverage --watchAll=false `
+
 ### Backend
 clone down the repo: `$ git clone https://github.com/jessicalyn/API-Palette-Picker`
 
@@ -38,16 +40,15 @@ launch in your browser: ` $ nodemon start `
 
 ## Future Development and Extensions Notes:
 
-- Fully keyboard navigation on note (ie. ability to press `Enter` to get to next line) \
-- Add drag and drop functionality for notes \
-- Add ability to search notes \
-- Add ability to upload files or pictures to notes
+- Deploy to Travis CI
+- Edit Project Names, Palette Names, and Palette Colors
+- Search for Palettes by hex color
 
 ### Technologies Used
-TrapperKeeper was built using: 
+Palette Picker was built using: 
 - [SCSS](https://sass-lang.com/)
 - [React.js](https://reactjs.org/)
-- [React-Router](https://reacttraining.com/react-router/)
+<!-- - [React-Router](https://reacttraining.com/react-router/) -->
 - [Redux.js](https://redux.js.org/)
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - [Node.js](https://nodejs.org/en/)
@@ -58,15 +59,5 @@ And tested using:
 
 ## Credits
 Credit for this project goes to: 
-- [David Cisneros](https://github.com/DevelopingDavid)
+- [Kim Myers](https://github.com/kimmichurri)
 - [Jessica Hansen](https://github.com/jessicalyn)
-- [Jake Admire](https://github.com/JakeAdmire)
-- [Michael Krog](https://github.com/MRKrog)
-
----
-This project was assigned by David Whitaker and Christie Lynam 
-
-*@ Turing School of Software and Design, Denver, CO.*
-
----
-**[Back to top](https://github.com/MRKrog/TrapperKeeper/blob/master/README.md#trapperkeeper)**
