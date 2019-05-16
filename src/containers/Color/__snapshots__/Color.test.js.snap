@@ -2,7 +2,7 @@
 
 exports[`Color Container should match the snapshot if locked is false 1`] = `
 "<div className=\\"palette-color\\" style={{...}}>
-  <h3>
+  <h3 className=\\"indiv-color-text\\">
     #F1C231
   </h3>
   <button onClick={[Function: mockConstructor]}>
@@ -13,7 +13,7 @@ exports[`Color Container should match the snapshot if locked is false 1`] = `
 
 exports[`Color Container should match the snapshot if locked is true 1`] = `
 "<div className=\\"palette-color\\" style={{...}}>
-  <h3>
+  <h3 className=\\"indiv-color-text\\">
     #F1C231
   </h3>
   <button onClick={[Function: mockConstructor]}>

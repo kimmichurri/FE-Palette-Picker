@@ -116,4 +116,30 @@ describe('actions', () => {
     expect(result).toEqual(expected)
   })
 
+  it('should return a type of SET_MESSAGE with a message', () => {
+    const mockMessage = "Something went wrong"
+
+    const expected = {
+      type: 'SET_MESSAGE',
+      message: mockMessage
+    }
+
+    const result = actions.setMessage(mockMessage)
+
+    expect(result).toEqual(expected)
+  })
+
+  it('should return a type of IS_LOADING with a boolean', () => {
+    const mockIsLoading = true
+
+    const expected = {
+      type: 'IS_LOADING',
+      isLoading: true
+    }
+
+    const result = actions.isLoading(mockIsLoading)
+
+    expect(result).toEqual(expected)
+  })
+
 });
