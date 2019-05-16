@@ -1,134 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1557954413207" clover="3.2.0">
-  <project timestamp="1557954413207" name="All files">
-    <metrics statements="174" coveredstatements="151" conditionals="34" coveredconditionals="25" methods="65" coveredmethods="56" elements="273" coveredelements="232" complexity="0" loc="174" ncloc="174" packages="8" files="16" classes="16"/>
+<coverage generated="1558016456135" clover="3.2.0">
+  <project timestamp="1558016456135" name="All files">
+    <metrics statements="195" coveredstatements="169" conditionals="46" coveredconditionals="33" methods="70" coveredmethods="60" elements="311" coveredelements="262" complexity="0" loc="195" ncloc="195" packages="9" files="19" classes="19"/>
     <package name="actions">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
       <file name="index.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/actions/index.js">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-        <line num="1" count="16" type="stmt"/>
-        <line num="6" count="16" type="stmt"/>
-        <line num="11" count="16" type="stmt"/>
-        <line num="16" count="16" type="stmt"/>
-        <line num="21" count="16" type="stmt"/>
-        <line num="26" count="16" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+        <line num="1" count="19" type="stmt"/>
+        <line num="6" count="19" type="stmt"/>
+        <line num="11" count="19" type="stmt"/>
+        <line num="16" count="19" type="stmt"/>
+        <line num="21" count="19" type="stmt"/>
+        <line num="26" count="19" type="stmt"/>
+        <line num="31" count="19" type="stmt"/>
+        <line num="36" count="19" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Loader">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Loader.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/components/Loader/Loader.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
     </package>
     <package name="containers.App">
-      <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="8"/>
       <file name="App.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/containers/App/App.js">
-        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
-        <line num="12" count="5" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
+        <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="8"/>
         <line num="14" count="5" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
-        <line num="20" count="25" type="stmt"/>
-        <line num="21" count="25" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="51" count="3" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="25" type="stmt"/>
+        <line num="23" count="25" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="66" count="3" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
       </file>
     </package>
     <package name="containers.Color">
-      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="Color.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/containers/Color/Color.js">
-        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="8" count="2" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
       </file>
     </package>
     <package name="containers.Palette">
-      <metrics statements="39" coveredstatements="24" conditionals="4" coveredconditionals="1" methods="16" coveredmethods="11"/>
+      <metrics statements="21" coveredstatements="14" conditionals="4" coveredconditionals="1" methods="9" coveredmethods="7"/>
       <file name="Palette.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/containers/Palette/Palette.js">
-        <metrics statements="39" coveredstatements="24" conditionals="4" coveredconditionals="1" methods="16" coveredmethods="11"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="21" coveredstatements="14" conditionals="4" coveredconditionals="1" methods="9" coveredmethods="7"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="5" type="cond" truecount="1" falsecount="1"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="35" count="4" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="5" type="cond" truecount="1" falsecount="1"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="41" count="5" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="47" count="4" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="56" count="4" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="62" count="4" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
-        <line num="68" count="5" type="stmt"/>
-        <line num="69" count="25" type="stmt"/>
-        <line num="71" count="5" type="stmt"/>
-        <line num="72" count="10" type="stmt"/>
-        <line num="73" count="10" type="stmt"/>
-        <line num="75" count="5" type="stmt"/>
-        <line num="96" count="2" type="stmt"/>
-        <line num="101" count="2" type="stmt"/>
-        <line num="102" count="1" type="stmt"/>
-        <line num="103" count="1" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="10" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
       </file>
     </package>
     <package name="containers.Projects">
-      <metrics statements="33" coveredstatements="25" conditionals="2" coveredconditionals="2" methods="17" coveredmethods="13"/>
+      <metrics statements="54" coveredstatements="35" conditionals="6" coveredconditionals="4" methods="24" coveredmethods="16"/>
       <file name="Projects.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/containers/Projects/Projects.js">
-        <metrics statements="33" coveredstatements="25" conditionals="2" coveredconditionals="2" methods="17" coveredmethods="13"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="32" count="4" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
+        <metrics statements="54" coveredstatements="35" conditionals="6" coveredconditionals="4" methods="24" coveredmethods="16"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="47" count="6" type="stmt"/>
-        <line num="48" count="12" type="stmt"/>
-        <line num="55" count="24" type="cond" truecount="2" falsecount="0"/>
-        <line num="56" count="12" type="stmt"/>
-        <line num="67" count="6" type="stmt"/>
-        <line num="79" count="2" type="stmt"/>
-        <line num="84" count="5" type="stmt"/>
-        <line num="85" count="1" type="stmt"/>
-        <line num="86" count="1" type="stmt"/>
-        <line num="87" count="1" type="stmt"/>
-        <line num="88" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="60" count="5" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="69" count="5" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="85" count="8" type="stmt"/>
+        <line num="86" count="16" type="stmt"/>
+        <line num="87" count="16" type="stmt"/>
+        <line num="89" count="8" type="stmt"/>
+        <line num="90" count="16" type="stmt"/>
+        <line num="97" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="98" count="16" type="stmt"/>
+        <line num="118" count="8" type="stmt"/>
+        <line num="146" count="2" type="stmt"/>
+        <line num="160" count="2" type="stmt"/>
+        <line num="167" count="6" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="169" count="1" type="stmt"/>
+        <line num="170" count="1" type="stmt"/>
+        <line num="171" count="1" type="stmt"/>
+        <line num="172" count="1" type="stmt"/>
+        <line num="173" count="0" type="stmt"/>
+        <line num="174" count="1" type="stmt"/>
       </file>
     </package>
     <package name="reducers">
-      <metrics statements="18" coveredstatements="18" conditionals="14" coveredconditionals="10" methods="4" coveredmethods="4"/>
+      <metrics statements="26" coveredstatements="26" conditionals="20" coveredconditionals="14" methods="6" coveredmethods="6"/>
       <file name="colorsReducer.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/reducers/colorsReducer.js">
         <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="0" falsecount="1"/>
@@ -137,6 +151,20 @@
         <line num="6" count="1" type="stmt"/>
       </file>
       <file name="errorReducer.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/reducers/errorReducer.js">
+        <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="isLoadingReducer.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/reducers/isLoadingReducer.js">
+        <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="messageReducer.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/reducers/messageReducer.js">
         <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="2" type="cond" truecount="2" falsecount="0"/>
@@ -161,18 +189,19 @@
       </file>
     </package>
     <package name="thunks">
-      <metrics statements="60" coveredstatements="60" conditionals="12" coveredconditionals="10" methods="12" coveredmethods="12"/>
+      <metrics statements="65" coveredstatements="65" conditionals="12" coveredconditionals="11" methods="12" coveredmethods="12"/>
       <file name="deletePalette.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/thunks/deletePalette.js">
-        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="4" count="3" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
       </file>
       <file name="deleteProject.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/thunks/deleteProject.js">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
@@ -187,30 +216,34 @@
         <line num="14" count="1" type="stmt"/>
       </file>
       <file name="fetchPalettes.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/thunks/fetchPalettes.js">
-        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
       </file>
       <file name="fetchProjects.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/thunks/fetchProjects.js">
-        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
       </file>
       <file name="postNewPalette.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/thunks/postNewPalette.js">
         <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
@@ -245,7 +278,7 @@
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="fetchOptionsCreator.js" path="/Users/jessicahansen/turing/mod4/palette-picker/FE-Palette-Picker/src/utils/fetchOptionsCreator.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
       </file>
     </package>
   </project>

@@ -2,15 +2,44 @@ import { Projects, mapStateToProps, mapDispatchToProps } from './Projects';
 import React from 'react';
 import { shallow } from 'enzyme';
 import { fetchOptionsCreator } from '../../utils/fetchOptionsCreator';
+
 jest.mock('../../utils/fetchOptionsCreator');
+jest.mock('../../thunks/postNewPalette');
 
 describe('Projects Container', () => {
   describe('Projects', () => {
     let wrapper
+
     const mockState = {
       project_name: '',
-      project_id: 0
-    }
+      project_id: 0,
+      palette_name: '',
+      color_1: '',
+      color_2: '',
+      color_3: '',
+      color_4: '',
+      color_5: ''
+      }
+
+    const mockMessage = "Something went wrong"
+    const mockCurrentColors = [
+      { color: "#BE10E8",
+        locked: false
+      },
+      { color: "#3241f2",
+        locked: true
+      },
+      { color: "#BE10E8",
+        locked: false
+      },
+      { color: "#605976",
+        locked: false
+      },
+      { color: "#1c1eb5",
+        locked: false
+      }
+    ]
+    
     const mockProjects = [
       { project_id: 1,
         project_name: "Travel App",
@@ -44,6 +73,17 @@ describe('Projects Container', () => {
         color_4: "#1c1eb5",
         color_5: "#605976"
       }]
+
+      const mockPalette = {
+        palette_name: 'Summer colors',
+        project_id: 0,
+        color_1: '#f82e41',
+        color_2: '#2261cd',
+        color_3: '#271de3',
+        color_4: '#f82e41',
+        color_5: '#271de3'
+      }
+    let mockPostNewPalette
     let mockPostNewProject
     let mockStorePalettes
     let mockDeletePalette
@@ -56,15 +96,19 @@ describe('Projects Container', () => {
       mockDeletePalette = jest.fn()
       mockStoreProjects = jest.fn()
       mockDeleteProject = jest.fn()
+      mockPostNewPalette = jest.fn().mockImplementation(() => Promise.resolve({mockPalette}))
       wrapper = shallow(
         <Projects 
           projects={mockProjects}
           palettes={mockPalettes}
+          message={mockMessage}
+          currentColors={mockCurrentColors}
           postNewProject={mockPostNewProject}
           storePalettes={mockStorePalettes}
           deletePalette={mockDeletePalette}
           storeProjects={mockStoreProjects}
-          delteProject={mockDeleteProject}
+          deleteProject={mockDeleteProject}
+          postNewPalette={mockPostNewPalette}
         />
       )
     })
@@ -77,28 +121,59 @@ describe('Projects Container', () => {
       expect(wrapper.state()).toEqual(mockState)
     })
 
-    it('should set state with a project name', () => {
+    it('should set state on handleChange', () => {
       const mockEvent = { target: { name : "project_name", value: "MyNewProject" } }
       
-      wrapper.instance().updateProjectName(mockEvent)
+      wrapper.instance().handleChange(mockEvent)
 
       expect(wrapper.state()).toEqual({
         project_name: "MyNewProject",
-        project_id: 0
+        project_id: 0,
+        palette_name: '',
+        color_1: '',
+        color_2: '',
+        color_3: '',
+        color_4: '',
+        color_5: ''
       })
     })
 
+    it.skip('should call props function postNewPalette with options and body', async () => {
+      wrapper.setState({
+        palette_name: 'Summer colors',
+        project_id: 0,
+        color_1: '#f82e41',
+        color_2: '#2261cd',
+        color_3: '#271de3',
+        color_4: '#f82e41',
+        color_5: '#271de3'
+      })
+      const body = wrapper.state()
+      // const options = await fetchOptionsCreator('POST', body)
+
+      wrapper.instance().addNewPalette()
+      expect(wrapper.instance().props.postNewPalette).toHaveBeenCalledWith(options, body)
+    })
+
+    
     it('should call fetchOptionsCreator with a method and body', async () => {
       const mockEvent = { preventDefault: jest.fn() }
       const projectName = "Unique Project Name"
-
+      
       wrapper.setState({
         project_name: projectName
       })
-
+      
       wrapper.instance().addNewProject(mockEvent)
-
+      
       expect(fetchOptionsCreator).toHaveBeenCalledWith('POST', { project_name: projectName} )
+    })
+    
+    it('should set state with a value', () => {
+      const mockEvent = { target: { name : "palette_name", value: "MyNewPalette" } }
+      wrapper.instance().handleChange(mockEvent)
+
+      expect(wrapper.state('palette_name')).toEqual("MyNewPalette")
     })
 
     it.skip('should call postNewProject with options and projectName as arguments', async () => {
@@ -282,6 +357,27 @@ describe('Projects Container', () => {
 
         mappedProps.deleteProject(mockProjectId)
 
+        expect(mockDispatch).toHaveBeenCalled(actionToDispatch)
+      })
+
+      it('should dispatch postNewPalette with options and body', () => {
+        const mockBody = {
+          palette_name: 'Summer colors',
+          project_id: 0,
+          color_1: '#f82e41',
+          color_2: '#2261cd',
+          color_3: '#271de3',
+          color_4: '#f82e41',
+          color_5: '#271de3'
+        }
+        const options = fetchOptionsCreator('POST', mockBody)
+        const mockDispatch = jest.fn()
+        const postNewPalette  = jest.fn()
+        const actionToDispatch = postNewPalette(options, mockBody)
+        const mappedProps = mapDispatchToProps(mockDispatch)
+  
+        mappedProps.postNewPalette(options, mockBody)
+  
         expect(mockDispatch).toHaveBeenCalled(actionToDispatch)
       })
   })

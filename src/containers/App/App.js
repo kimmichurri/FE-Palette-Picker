@@ -50,7 +50,7 @@ App.propTypes = {
   error: PropTypes.string.isRequired,
   projects: PropTypes.array.isRequired,
   currentColors: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
   fetchProjects: PropTypes.func.isRequired,
   storeColors: PropTypes.func.isRequired,
   fetchPalettes: PropTypes.func.isRequired

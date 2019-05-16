@@ -111,3 +111,9 @@ h5 {
     box-shadow:none;
   }
 }
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+ }

@@ -50,13 +50,11 @@ export class Palette extends Component {
 
 Palette.propTypes = {
   currentColors: PropTypes.array.isRequired,
-  projects: PropTypes.array.isRequired,
   storeColors: PropTypes.func.isRequired
 }
 
 export const mapStateToProps = (state) => ({
   currentColors: state.currentColors,
-  projects: state.projects
 })
 
 export const mapDispatchToProps = (dispatch) => ({

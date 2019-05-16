@@ -154,14 +154,14 @@ export class Projects extends Component {
 Projects.propTypes = {
   projects: PropTypes.array.isRequired,
   palettes: PropTypes.array.isRequired,
-  message: PropTypes.string.isRequired,
+  message: PropTypes.string,
   postNewProject: PropTypes.func.isRequired,
   storePalettes: PropTypes.func.isRequired,
   deletePalette: PropTypes.func.isRequired,
   storeProjects: PropTypes.func.isRequired,
-  deleteProject: PropTypes.func.isRequired,
-  setMessage: PropTypes.func.isRequired,
-  currentColors: PropTypes.array.isRequired,
+  deleteProject: PropTypes.func,
+  setMessage: PropTypes.func,
+  currentColors: PropTypes.array,
   postNewPalette: PropTypes.func.isRequired
 }
 

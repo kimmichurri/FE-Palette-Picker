@@ -1,4 +1,4 @@
-import { hasError } from '../actions';
+import { hasError, setMessage } from '../actions';
 import { fetchOptionsCreator } from '../utils/fetchOptionsCreator';
 
 export const deletePalette = (id) => {
@@ -10,6 +10,7 @@ export const deletePalette = (id) => {
       if (!response.ok) {
         throw Error (response.statusText)
       }
+      const result = await response.json()
     } catch(error) {
       dispatch(hasError(error.message))
     }
