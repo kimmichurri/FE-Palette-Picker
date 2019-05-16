@@ -84,6 +84,11 @@ export class Projects extends Component {
       <form onSubmit={this.addNewProject}>
         <input type="text" onChange={this.updateProjectName} value={this.state.project_name} name="project_name" />
         <button className="project-button">Add New Project</button>
+        <div className="message-container">
+        {this.props.message.length > 0 ? (
+          <p className="user-message">{this.props.message}</p>) : (<p></p>
+        )}
+        </div>
       </form>
       <div className="projects-to-display">
         {projectsToDisplay}
@@ -95,7 +100,8 @@ export class Projects extends Component {
 
 export const mapStateToProps = (state) => ({
   projects: state.projects,
-  palettes: state.palettes
+  palettes: state.palettes,
+  message: state.message
 })
 
 export const mapDispatchToProps = (dispatch) => ({
