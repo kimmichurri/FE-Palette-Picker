@@ -53,9 +53,9 @@ export class Projects extends Component {
   render() {
     const projectsToDisplay = this.props.projects.map((project, index) => {
       return <div className="individual-projects" key={`${project.project_name}-${index}`}>
-        <h3>{project.project_name}</h3>
-          <button onClick={this.deleteProject}>
-            <img src={closeButton} alt={'Delete Project icon'} id={project.project_id}/>
+        <h3 className="project-title">{project.project_name}</h3>
+          <button onClick={this.deleteProject} >
+            <img className="delete-project-button" src={closeButton} alt={'Delete Project icon'} id={project.project_id}/>
           </button>
         {
           this.props.palettes.map((palette, index) => {
@@ -92,6 +92,7 @@ export class Projects extends Component {
         </div>
       </form>
       <div className="projects-to-display">
+        <p className="my-projects-title">my projects</p>
         {projectsToDisplay}
       </div>
       </div>

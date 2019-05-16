@@ -1,20 +1,22 @@
+.my-projects-title {
+  font-family: $font-title;
+  font-size: 40px;
+  padding: 20px;
+}
 .projects-to-display {
-  // display: flex;
-  border: 2px solid purple
+  border: none;
+  background-color: whitesmoke;
+  border-radius: 25px;
 }
 
 .individual-projects {
   display: flex;
-  border: 2px solid lightgrey;
-  background-color: whitesmoke;
   border-radius: 10px;
   margin: 15px;
+  min-height: 200px;
 }
 
 .project-palettes {
-  // display: flex;
-  border-radius: 10px;
-  border: 2px solid lightgrey;
   margin: 10px;
   width: 125px;
   height: 100px;
@@ -27,6 +29,8 @@
 
 h5 {
   flex: 1;
+  padding: 0px 10px;
+  min-height: 40px;
 }
 
 .palette-header button {
@@ -34,19 +38,20 @@ h5 {
   flex-direction: row-reverse;
 }
 
-.delete-palette-button {
+.delete-palette-button,
+.delete-project-button {
   width: 20px;
   height: 20px;
 }
 
 .palette-colors {
   display: flex;
+  box-shadow: 10px 5px 5px black;
 }
 
 .small-palette {
-  height: 50px;
+  height: 40px;
   width: 50px;
-  border: 1px solid black
 }
 
 .user-message {
@@ -57,4 +62,9 @@ h5 {
 
 .message-container {
   height: 25px;
+}
+
+.project-title {
+  width: 50px;
+  margin: 15px;
 }

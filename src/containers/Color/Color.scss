@@ -1,8 +1,7 @@
 .palette-color {
   height: 100px;
   margin: 0;
-  // display: flex;
-  align-content: space-between
+  align-content: space-between;
 }
 
 button {
@@ -12,3 +11,9 @@ button {
   display: flex;
   flex-direction: column
 }
+
+.indiv-color-text {
+  font-family: $font-title;
+  font-weight: bolder;
+}
+

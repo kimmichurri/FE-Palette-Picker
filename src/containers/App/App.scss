@@ -2,37 +2,33 @@
   height: 100%;
   width: 100%;
   display: flex;
-  // border: 2px solid orange;
 }
 
 .header-project-wrapper {
-  // border: 2px solid blue;
   flex: 1;
 }
 
-.app-header {
+// .app-header {
   // height: 30%;
   // border: 2px solid black;
-}
+// }
 
-h1 {
-  margin: 30px;
+.main-title {
+  margin: 30px 15px;
   font-size: 50px;
   font-family: $font-title;
 }
 
-.projects-wrapper {
+// .projects-wrapper {
   // background-color: purple;
-  border: 2px solid green;
-}
+  // border: 2px solid green;
+// }
 
 .palette-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 2px solid hotpink;
-  // background-color: yellow
 }
 
 input {
@@ -50,4 +46,17 @@ button {
   background: transparent;
   font-size: 18px;
   font-family: $font-main;
+}
+
+.project-button {
+  font-family: $font-main;
+  padding: 20px;
+}
+
+input[type=text] {
+  border: 3px solid #CCCCCC;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
 }

@@ -30,7 +30,7 @@ export class App extends Component {
       <div className="App">
         <div className="header-project-wrapper">
           <header className="app-header">
-            <h1>Palette Picker</h1>
+            <h1 className="main-title">PALETTE PICKER</h1>
           </header>
           <div className="projects-wrapper">
             {this.props.loading? 
