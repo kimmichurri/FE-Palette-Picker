@@ -32,3 +32,8 @@ export const setMessage = (message) => ({
   type: 'SET_MESSAGE',
   message
 })
+
+export const isLoading = (boolean) => ({
+  type: 'IS_LOADING',
+  isLoading: boolean
+})
