@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.app-header {
+  display: flex;
+}
+
 .header-project-wrapper {
   flex: 1;
 }
@@ -16,7 +20,6 @@
 
 .palette-wrapper {
   flex: 1;
-  display: flex;
   flex-direction: column;
   width: 100%;
 }
@@ -40,13 +43,21 @@ button {
 
 .project-button {
   font-family: $font-main;
-  padding: 20px;
+  padding-left: 20px;
 }
 
 input[type=text] {
   border: 3px solid #CCCCCC;
+  margin: 15px;
+  height: 40px;
+  width: 300px;
 }
 
 input[type=text]:focus {
   border: 3px solid #555;
+}
+
+.palette-get-set {
+  width: 100%;
+  display: flex;
 }
