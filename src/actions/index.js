@@ -27,3 +27,8 @@ export const storePalettes = (palettes) => ({
   type: 'STORE_PALETTES',
   palettes
 })
+
+export const setMessage = (message) => ({
+  type: 'SET_MESSAGE',
+  message
+})

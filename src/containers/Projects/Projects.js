@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchOptionsCreator } from '../../utils/fetchOptionsCreator';
 import { postNewProject } from '../../thunks/postNewProject';
 import closeButton from '../../assets/closeButton.png';
-import { storePalettes, storeProjects } from '../../actions';
+import { storePalettes, storeProjects, setMessage } from '../../actions';
 import { deletePalette } from '../../thunks/deletePalette';
 import { deleteProject } from '../../thunks/deleteProject';
 
@@ -29,8 +29,9 @@ export class Projects extends Component {
       const body = { project_name: projectName }
       const options = await fetchOptionsCreator('POST', body)
       this.props.postNewProject(options, projectName)
+      this.props.setMessage('')
     } else {
-      console.log('name is taken')
+      this.props.setMessage('This project name is already taken. Please choose another name.')
     }
   }
 
@@ -102,7 +103,8 @@ export const mapDispatchToProps = (dispatch) => ({
   storePalettes: (updatedPalettes) => dispatch(storePalettes(updatedPalettes)),
   deletePalette: (id) => dispatch(deletePalette(id)),
   storeProjects: (updatedProjects) => dispatch(storeProjects(updatedProjects)),
-  deleteProject: (id) => dispatch(deleteProject(id))
+  deleteProject: (id) => dispatch(deleteProject(id)),
+  setMessage: (message) => dispatch(setMessage(message))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects)

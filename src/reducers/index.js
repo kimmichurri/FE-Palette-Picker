@@ -3,10 +3,12 @@ import { errorReducer } from './errorReducer';
 import { projectsReducer } from './projectsReducer';
 import { colorsReducer } from './colorsReducer';
 import { palettesReducer } from './palettesReducer';
+import { messageReducer } from './messageReducer';
 
 export const rootReducer = combineReducers({
   error: errorReducer,
   projects: projectsReducer,
   currentColors: colorsReducer,
-  palettes: palettesReducer
+  palettes: palettesReducer,
+  message: messageReducer
 });
