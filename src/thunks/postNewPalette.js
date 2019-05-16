@@ -2,7 +2,7 @@ import { hasError, addPalette } from '../actions';
 
 export const postNewPalette = (options, body) => {
   return async (dispatch) => {
-    const url = `https://palette-picker-mfjk.herokuapp.com/api/v1/palettes`
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/v1/palettes`
     try {
       const response = await fetch(url, options)
       if (!response.ok) {

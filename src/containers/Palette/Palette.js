@@ -43,25 +43,25 @@ export class Palette extends Component {
     })
     this.props.storeColors(updatedColors)
   }
+  
+  handleChange = (e) => {
+    const { name, value } = e.target
+    this.setState({ [name]: value })
+  }
 
-  setPalette = (e) => {
+  setPalette = async (e) => {
     e.preventDefault()
-    this.props.currentColors.forEach((color, index) => {
+    await this.props.currentColors.forEach((color, index) => {
       let colorKey = `color_${index + 1}`
       this.setState({ [colorKey]: color.color })
     })
     this.addNewPalette()
   }
-
+  
   addNewPalette = async () => {
     const body = this.state
     const options = await fetchOptionsCreator('POST', body)
     this.props.postNewPalette(options, body)
-  }
-
-  handleChange = (e) => {
-    const { name, value } = e.target
-    this.setState({ [name]: value })
   }
 
   render() {
@@ -80,7 +80,7 @@ export class Palette extends Component {
           </button>
         </h2>
         <select value={this.state.project_id} name="project_id" onChange={this.handleChange}>
-          <option value="0" disable selected default>Select a Project</option>
+          <option value="0" disable="true" select="true" default>Select a Project</option>
           {projectList}
         </select>
         <form onSubmit={this.setPalette}>
