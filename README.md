@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Palette Picker
 
-## Available Scripts
+## Overview:
 
-In the project directory, you can run:
+Palette Picker is a partner project based on the user functionality of Coolors. You can view and create palettes of colors. You can create projects and save palettes to the projects.
 
-### `npm start`
+[More information about original assignment can be found here](http://frontend.turing.io/projects/palette-picker.html)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Palette Picker is deployed to Heroku: https://pick-your-palette.herokuapp.com/
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Preview:
 
-### `npm test`
+<img src="src/media/TrapperKeeper.png" alt="TrapperKeeper screenshot">
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Creating a new note             |  Deleting a note
+:-------------------------:|:-------------------------:
+<img src="src/media/createNote.gif" alt="creating new note">  |  <img src="src/media/deleteList.gif" alt="deleting a note">
+**Toggling list item completion**             |  **Changing note color**
+<img src="src/media/toggleComplete.gif" alt="marking list item as completed">  |  <img src="src/media/toggleColor.gif" alt="changing color of note">
 
-### `npm run build`
+## Getting Started:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+These instructions will get a copy of the project up and running on your local machine for usage and testing purposes.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Frontend
+clone down the repo: `$ git clone https://github.com/kimmichurri/FE-Palette-Picker`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+cd into directory and run npm install: `$ npm install`
 
-### `npm run eject`
+launch in your browser: `$ npm start `
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Backend
+clone down the repo: `$ git clone https://github.com/jessicalyn/API-Palette-Picker`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+cd into directory and run npm install: ` $ npm install `
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+launch in your browser: ` $ nodemon start `
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Future Development and Extensions Notes:
 
-## Learn More
+- Fully keyboard navigation on note (ie. ability to press `Enter` to get to next line) \
+- Add drag and drop functionality for notes \
+- Add ability to search notes \
+- Add ability to upload files or pictures to notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Technologies Used
+TrapperKeeper was built using: 
+- [SCSS](https://sass-lang.com/)
+- [React.js](https://reactjs.org/)
+- [React-Router](https://reacttraining.com/react-router/)
+- [Redux.js](https://redux.js.org/)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+- [Node.js](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+And tested using:
+- [Enzyme](https://airbnb.io/enzyme/) & [Jest](https://airbnb.io/enzyme/docs/guides/jest.html)
 
-### Code Splitting
+## Credits
+Credit for this project goes to: 
+- [David Cisneros](https://github.com/DevelopingDavid)
+- [Jessica Hansen](https://github.com/jessicalyn)
+- [Jake Admire](https://github.com/JakeAdmire)
+- [Michael Krog](https://github.com/MRKrog)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+---
+This project was assigned by David Whitaker and Christie Lynam 
 
-### Analyzing the Bundle Size
+*@ Turing School of Software and Design, Denver, CO.*
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
+**[Back to top](https://github.com/MRKrog/TrapperKeeper/blob/master/README.md#trapperkeeper)**
