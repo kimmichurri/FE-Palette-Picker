@@ -5,6 +5,7 @@ import { storeColors } from '../../actions';
 import generate from '../../assets/generate.png';
 import { fetchOptionsCreator } from '../../utils/fetchOptionsCreator';
 import { postNewPalette } from '../../thunks/postNewPalette';
+import PropTypes from 'prop-types';
 
 export class Palette extends Component {
   constructor() {
@@ -91,6 +92,13 @@ export class Palette extends Component {
       </div>
     )
   }
+}
+
+Palette.propTypes = {
+  currentColors: PropTypes.array.isRequired,
+  projects: PropTypes.array.isRequired,
+  storeColors: PropTypes.func.isRequired,
+  postNewPalette: PropTypes.func.isRequired
 }
 
 export const mapStateToProps = (state) => ({

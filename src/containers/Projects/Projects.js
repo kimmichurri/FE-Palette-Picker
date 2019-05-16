@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { fetchOptionsCreator } from '../../utils/fetchOptionsCreator';
 import { postNewProject } from '../../thunks/postNewProject';
 import closeButton from '../../assets/closeButton.png';
-import { storePalettes, storeProjects } from '../../actions';
+import { storePalettes, storeProjects, setMessage } from '../../actions';
 import { deletePalette } from '../../thunks/deletePalette';
 import { deleteProject } from '../../thunks/deleteProject';
+import PropTypes from 'prop-types';
 
 export class Projects extends Component {
   constructor() {
@@ -24,9 +25,15 @@ export class Projects extends Component {
   addNewProject = async (e) => {
     e.preventDefault()
     const projectName = this.state.project_name
-    const body = { project_name: projectName }
-    const options = await fetchOptionsCreator('POST', body)
-    this.props.postNewProject(options, projectName)
+    const foundIndex = this.props.projects.findIndex(project => project.project_name === projectName)
+    if (foundIndex === -1) {
+      const body = { project_name: projectName }
+      const options = await fetchOptionsCreator('POST', body)
+      this.props.postNewProject(options, projectName)
+      this.props.setMessage('')
+    } else {
+      this.props.setMessage('This project name is already taken. Please choose another name.')
+    }
   }
 
   deletePalette = (e) => {
@@ -46,9 +53,9 @@ export class Projects extends Component {
   render() {
     const projectsToDisplay = this.props.projects.map((project, index) => {
       return <div className="individual-projects" key={`${project.project_name}-${index}`}>
-        <h3>{project.project_name}</h3>
-          <button onClick={this.deleteProject}>
-            <img src={closeButton} alt={'Delete Project icon'} id={project.project_id}/>
+        <h3 className="project-title">{project.project_name}</h3>
+          <button onClick={this.deleteProject} >
+            <img className="delete-project-button" src={closeButton} alt={'Delete Project icon'} id={project.project_id}/>
           </button>
         {
           this.props.palettes.map((palette, index) => {
@@ -78,8 +85,14 @@ export class Projects extends Component {
       <form onSubmit={this.addNewProject}>
         <input type="text" onChange={this.updateProjectName} value={this.state.project_name} name="project_name" />
         <button className="project-button">Add New Project</button>
+        <div className="message-container">
+        {this.props.message.length > 0 ? (
+          <p className="user-message">{this.props.message}</p>) : (<p></p>
+        )}
+        </div>
       </form>
       <div className="projects-to-display">
+        <p className="my-projects-title">my projects</p>
         {projectsToDisplay}
       </div>
       </div>
@@ -87,9 +100,22 @@ export class Projects extends Component {
   }
 }
 
+Projects.propTypes = {
+  projects: PropTypes.array.isRequired,
+  palettes: PropTypes.array.isRequired,
+  message: PropTypes.string.isRequired,
+  postNewProject: PropTypes.func.isRequired,
+  storePalettes: PropTypes.func.isRequired,
+  deletePalette: PropTypes.func.isRequired,
+  storeProjects: PropTypes.func.isRequired,
+  deleteProject: PropTypes.func.isRequired,
+  setMessage: PropTypes.func.isRequired,
+}
+
 export const mapStateToProps = (state) => ({
   projects: state.projects,
-  palettes: state.palettes
+  palettes: state.palettes,
+  message: state.message
 })
 
 export const mapDispatchToProps = (dispatch) => ({
@@ -97,7 +123,8 @@ export const mapDispatchToProps = (dispatch) => ({
   storePalettes: (updatedPalettes) => dispatch(storePalettes(updatedPalettes)),
   deletePalette: (id) => dispatch(deletePalette(id)),
   storeProjects: (updatedProjects) => dispatch(storeProjects(updatedProjects)),
-  deleteProject: (id) => dispatch(deleteProject(id))
+  deleteProject: (id) => dispatch(deleteProject(id)),
+  setMessage: (message) => dispatch(setMessage(message))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects)

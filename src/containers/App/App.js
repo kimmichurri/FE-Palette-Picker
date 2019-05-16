@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { fetchProjects } from '../../thunks/fetchProjects';
 import { fetchPalettes } from '../../thunks/fetchPalettes';
 import { storeColors } from '../../actions';
+import Loader from '../../components/Loader/Loader';
 import Palette from '../Palette/Palette';
 import Projects from '../Projects/Projects';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -28,10 +30,12 @@ export class App extends Component {
       <div className="App">
         <div className="header-project-wrapper">
           <header className="app-header">
-            <h1>Palette Picker</h1>
+            <h1 className="main-title">PALETTE PICKER</h1>
           </header>
           <div className="projects-wrapper">
-            <Projects />
+            {this.props.loading? 
+             <Loader /> : <Projects />
+            }
           </div>
         </div>
         <div className="palette-wrapper">
@@ -42,10 +46,21 @@ export class App extends Component {
   }
 }
 
+App.propTypes = {
+  error: PropTypes.string.isRequired,
+  projects: PropTypes.array.isRequired,
+  currentColors: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+  fetchProjects: PropTypes.func.isRequired,
+  storeColors: PropTypes.func.isRequired,
+  fetchPalettes: PropTypes.func.isRequired
+}
+
 export const mapStateToProps = (state) => ({
   error: state.error,
   projects: state.projects,
-  currentColors: state.currentColors
+  currentColors: state.currentColors,
+  loading: state.loading
 })
 
 export const mapDispatchToProps = (dispatch) => ({
