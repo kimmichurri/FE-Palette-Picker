@@ -69,7 +69,6 @@ export class Projects extends Component {
   
   addNewPalette = async () => {
     const { project_id, palette_name, color_1, color_2, color_3, color_4, color_5 } = this.state
-    console.log(project_id)
     const body = {
       project_id,
       palette_name,
