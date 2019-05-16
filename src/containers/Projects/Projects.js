@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { storePalettes, storeProjects, setMessage } from '../../actions';
 import closeButton from '../../assets/closeButton.png';
+import x from '../../assets/x.png';
 import { deletePalette } from '../../thunks/deletePalette';
 import { deleteProject } from '../../thunks/deleteProject';
 import { postNewPalette } from '../../thunks/postNewPalette';
@@ -39,7 +40,7 @@ export class Projects extends Component {
       this.props.postNewProject(options, projectName)
       this.props.setMessage('')
     } else {
-      this.props.setMessage('This project name is already taken. Please choose another name.')
+      this.props.setMessage('This project name is already taken')
     }
   }
 
@@ -88,17 +89,17 @@ export class Projects extends Component {
     })
     const projectsToDisplay = this.props.projects.map((project, index) => {
       return <div className="individual-projects" key={`${project.project_name}-${index}`}>
-        <h3 className="project-title">{project.project_name}</h3>
-          <button onClick={this.deleteProject} >
-            <img className="delete-project-button" src={closeButton} alt={'Delete Project icon'} id={project.project_id}/>
+          <button className="delete-me" onClick={this.deleteProject} >
+            <img className="delete-project-button" src={x} alt={'Delete Project icon'} id={project.project_id}/>
           </button>
+        <h3 className="project-title">{project.project_name}</h3>
         {
           this.props.palettes.map((palette, index) => {
             if (palette.project_id === project.project_id) {
               return <div className="project-palettes" key={`${palette.palette_name}-${index}`}>
                 <div className="palette-header">
                   <h5>{palette.palette_name}</h5>
-                    <button onClick={this.deletePalette}>
+                    <button onClick={this.deletePalette} >
                       <img className="delete-palette-button" src={closeButton} alt={'Delete Palette icon'} id={palette.palette_id}/>
                     </button>
                 </div>  
@@ -116,28 +117,35 @@ export class Projects extends Component {
       </div>
     })
     return(
-      <div className="projects">
-      <form onSubmit={this.addNewProject}>
-        <input type="text" onChange={this.handleChange} value={this.state.project_name} name="project_name" />
-        <button className="project-button">Add New Project</button>
-        <div className="message-container">
-        {this.props.message.length > 0 ? (
-          <p className="user-message">{this.props.message}</p>) : (<p></p>
-        )}
+      <div>
+        <div className="projects">
+        <form onSubmit={this.addNewProject}>
+          <p className="new-project-name">New project name:</p>
+          <input type="text" onChange={this.handleChange} value={this.state.project_name} name="project_name" />
+          <button className="project-button">Add New Project</button>
+          <div className="message-container">
+          {this.props.message.length > 0 ? (
+            <p className="user-message">{this.props.message}</p>) : (<p></p>
+          )}
+          </div>
+        </form>
+        <div>
+          <p className="save-to-existing">Save to an existing Project:</p>
+          <select className="drop-down" value={this.state.project_id} name="project_id" onChange={this.handleChange}>
+            <option value="0" disable="true" select="true" default>Select a Project</option>
+            {projectList}
+          </select>
+          <form onSubmit={this.setPalette}>
+            <input type="text" onChange={this.handleChange} value={this.state.palette_name} name="palette_name" />
+            <button className="palette-button" disabled={this.state.project_id == 0}>Save Palette to Project</button>
+          </form>
+          </div>
         </div>
-      </form>
-      <select value={this.state.project_id} name="project_id" onChange={this.handleChange}>
-        <option value="0" disable="true" select="true" default>Select a Project</option>
-        {projectList}
-      </select>
-      <form onSubmit={this.setPalette}>
-        <input type="text" onChange={this.handleChange} value={this.state.palette_name} name="palette_name" />
-        <button className="palette-button" disabled={this.state.project_id == 0}>Save Palette to Project</button>
-      </form>
-      <div className="projects-to-display">
-        <p className="my-projects-title">my projects</p>
-        {projectsToDisplay}
-      </div>
+
+        <div className="projects-to-display">
+          <p className="my-projects-title">my projects</p>
+          {projectsToDisplay}
+        </div>
       </div>
     )
   }

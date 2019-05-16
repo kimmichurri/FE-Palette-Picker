@@ -2,11 +2,19 @@
   font-family: $font-title;
   font-size: 40px;
   padding: 20px;
+  margin: 10px;
 }
+
+.projects {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .projects-to-display {
   border: none;
   background-color: whitesmoke;
   border-radius: 25px;
+  box-shadow: 2px 1px 1px #dcdcdc;
 }
 
 .individual-projects {
@@ -17,10 +25,14 @@
 }
 
 .project-palettes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 10px;
   width: 125px;
-  height: 100px;
+  height: 130px;
   background-color: white;
+  box-shadow: 6px 5px 5px #dcdcdc;
 }
 
 .palette-header {
@@ -44,9 +56,12 @@ h5 {
   height: 20px;
 }
 
+.palette-button {
+  margin: 15px;
+}
+
 .palette-colors {
   display: flex;
-  box-shadow: 10px 5px 5px black;
 }
 
 .small-palette {
@@ -62,9 +77,37 @@ h5 {
 
 .message-container {
   height: 25px;
+  text-align: center;
 }
 
 .project-title {
   width: 50px;
   margin: 15px;
+}
+
+.drop-down {
+  margin-left: 15px;
+  height: 40px;
+  width: 300px;
+  background-color: #dcdcdc;
+  border: none;
+}
+
+.project-button,
+.palette-button {
+  background-color: #4B4774;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  margin: auto;
+  box-shadow: 6px 5px 5px #dcdcdc;
+  &:hover {
+    background-color: #745FA5;
+    cursor: pointer;
+  }
+  &:disabled {
+    background-color: #dcdcdc;
+    box-shadow:none;
+  }
 }
