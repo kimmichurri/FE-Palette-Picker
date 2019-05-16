@@ -4,8 +4,8 @@ exports[`App Container App should match the snapshot with all data passed in 1`]
 "<div className=\\"App\\">
   <div className=\\"header-project-wrapper\\">
     <header className=\\"app-header\\">
-      <h1>
-        Palette Picker
+      <h1 className=\\"main-title\\">
+        PALETTE PICKER
       </h1>
     </header>
     <div className=\\"projects-wrapper\\">
