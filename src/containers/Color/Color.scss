@@ -1,6 +1,6 @@
 .palette-color {
   display: flex;
-  height: 100px;
+  height: 185px;
   margin: 0;
   justify-content: space-between;
 }
@@ -25,5 +25,12 @@ button {
 .indiv-color-text,
 .star-icon {
   padding: 20px;
+}
+
+.save-to-existing,
+.new-project-name {
+  font-family: "Rosario", sans-serif;
+  padding-left: 20px;
+  font-size: 18px;
 }
 
