@@ -44,9 +44,9 @@ export class Palette extends Component {
     this.props.storeColors(updatedColors)
   }
 
-  setPalette = (e) => {
+  setPalette = async (e) => {
     e.preventDefault()
-    this.props.currentColors.forEach((color, index) => {
+    await this.props.currentColors.forEach((color, index) => {
       let colorKey = `color_${index + 1}`
       this.setState({ [colorKey]: color.color })
     })
