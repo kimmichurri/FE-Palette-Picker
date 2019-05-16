@@ -9,14 +9,9 @@ Palette Picker is a partner project based on the user functionality of Coolors. 
 Palette Picker is deployed to Heroku: https://pick-your-palette.herokuapp.com/
 
 ## Preview:
+<img width="1439" alt="Screen Shot 2019-05-16 at 8 06 42 AM" src="https://user-images.githubusercontent.com/43019784/57860810-c2f17980-77b2-11e9-98dd-e428e8e03538.png">
 
-<img src="src/media/TrapperKeeper.png" alt="TrapperKeeper screenshot">
-
-Creating a new note             |  Deleting a note
-:-------------------------:|:-------------------------:
-<img src="src/media/createNote.gif" alt="creating new note">  |  <img src="src/media/deleteList.gif" alt="deleting a note">
-**Toggling list item completion**             |  **Changing note color**
-<img src="src/media/toggleComplete.gif" alt="marking list item as completed">  |  <img src="src/media/toggleColor.gif" alt="changing color of note">
+![2019-05-16 08 13 35](https://user-images.githubusercontent.com/43019784/57861449-d94c0500-77b3-11e9-8245-a802be0ab753.gif)
 
 ## Getting Started:
 
