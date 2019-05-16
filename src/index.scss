@@ -2,6 +2,11 @@
 
 @import './variables.scss';
 @import './containers/App/App.scss';
+@import './containers/Color/Color.scss';
+@import './containers/Palette/Palette.scss';
+@import './containers/Projects/Projects.scss';
+@import './components/Loader/Loader.scss';
+
 
 * {
   box-sizing: border-box;
