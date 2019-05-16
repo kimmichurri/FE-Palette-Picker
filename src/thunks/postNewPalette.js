@@ -5,6 +5,7 @@ export const postNewPalette = (options, body) => {
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/v1/palettes`
     try {
       const response = await fetch(url, options)
+      console.log("got here", response.ok)
       if (!response.ok) {
         throw Error (response.statusText)
       }
