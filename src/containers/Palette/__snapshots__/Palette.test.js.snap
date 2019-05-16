@@ -9,7 +9,7 @@ exports[`Palette Container Palette should match the snapshot 1`] = `
     </button>
   </h2>
   <select value={0} name=\\"project_id\\" onChange={[Function]}>
-    <option value=\\"0\\" disable={true} selected={true} default={true}>
+    <option value=\\"0\\" disable=\\"true\\" select=\\"true\\" default={true}>
       Select a Project
     </option>
     <option value={1}>
