@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import emptyStar from '../../assets/emptyStar.png';
 import filledStar from '../../assets/filledStar.png';
+import PropTypes from 'prop-types';
 
 export default class Color extends Component {
 
@@ -15,4 +16,10 @@ export default class Color extends Component {
       </div>
     )
   }
+}
+
+Color.propTypes = {
+  color: PropTypes.string.isRequired,
+  locked: PropTypes.bool.isRequired,
+  index: PropTypes.number.isRequired
 }

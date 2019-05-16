@@ -6,6 +6,7 @@ import closeButton from '../../assets/closeButton.png';
 import { storePalettes, storeProjects, setMessage } from '../../actions';
 import { deletePalette } from '../../thunks/deletePalette';
 import { deleteProject } from '../../thunks/deleteProject';
+import PropTypes from 'prop-types';
 
 export class Projects extends Component {
   constructor() {
@@ -96,6 +97,18 @@ export class Projects extends Component {
       </div>
     )
   }
+}
+
+Projects.propTypes = {
+  projects: PropTypes.array.isRequired,
+  palettes: PropTypes.array.isRequired,
+  message: PropTypes.string.isRequired,
+  postNewProject: PropTypes.func.isRequired,
+  storePalettes: PropTypes.func.isRequired,
+  deletePalette: PropTypes.func.isRequired,
+  storeProjects: PropTypes.func.isRequired,
+  deleteProject: PropTypes.func.isRequired,
+  setMessage: PropTypes.func.isRequired,
 }
 
 export const mapStateToProps = (state) => ({

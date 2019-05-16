@@ -5,6 +5,7 @@ import { fetchPalettes } from '../../thunks/fetchPalettes';
 import { storeColors } from '../../actions';
 import Palette from '../Palette/Palette';
 import Projects from '../Projects/Projects';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -40,6 +41,15 @@ export class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  error: PropTypes.string.isRequired,
+  projects: PropTypes.array.isRequired,
+  currentColors: PropTypes.array.isRequired,
+  fetchProjects: PropTypes.func.isRequired,
+  storeColors: PropTypes.func.isRequired,
+  fetchPalettes: PropTypes.func.isRequired
 }
 
 export const mapStateToProps = (state) => ({
