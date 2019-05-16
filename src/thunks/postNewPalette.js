@@ -12,7 +12,7 @@ export const postNewPalette = (options, body) => {
       const newPalette = {
         palette_name: body.palette_name,
         palette_id: result.palette_id, 
-        project_id: 1,
+        project_id: parseInt(body.project_id),
         color_1: body.color_1,
         color_2: body.color_2,
         color_3: body.color_3,

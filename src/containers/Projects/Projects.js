@@ -69,6 +69,7 @@ export class Projects extends Component {
   
   addNewPalette = async () => {
     const { project_id, palette_name, color_1, color_2, color_3, color_4, color_5 } = this.state
+    console.log(project_id)
     const body = {
       project_id,
       palette_name,
@@ -119,29 +120,28 @@ export class Projects extends Component {
     return(
       <div>
         <div className="projects">
-        <form onSubmit={this.addNewProject}>
-          <p className="new-project-name">New project name:</p>
-          <input type="text" onChange={this.handleChange} value={this.state.project_name} name="project_name" />
-          <button className="project-button">Add New Project</button>
-          <div className="message-container">
-          {this.props.message.length > 0 ? (
-            <p className="user-message">{this.props.message}</p>) : (<p></p>
-          )}
-          </div>
-        </form>
-        <div>
-          <p className="save-to-existing">Save to an existing Project:</p>
-          <select className="drop-down" value={this.state.project_id} name="project_id" onChange={this.handleChange}>
-            <option value="0" disable="true" select="true" default>Select a Project</option>
-            {projectList}
-          </select>
-          <form onSubmit={this.setPalette}>
-            <input type="text" onChange={this.handleChange} value={this.state.palette_name} name="palette_name" />
-            <button className="palette-button" disabled={this.state.project_id == 0}>Save Palette to Project</button>
+          <form onSubmit={this.addNewProject}>
+            <p className="new-project-name">New project name:</p>
+            <input type="text" onChange={this.handleChange} value={this.state.project_name} name="project_name" />
+            <button className="project-button">Add New Project</button>
+            <div className="message-container">
+            {this.props.message.length > 0 ? (
+              <p className="user-message">{this.props.message}</p>) : (<p></p>
+            )}
+            </div>
           </form>
+          <div>
+            <p className="save-to-existing">Save to an existing Project:</p>
+            <select className="drop-down" value={this.state.project_id} name="project_id" onChange={this.handleChange}>
+              <option value="0" disable="true" select="true" default>Select a Project</option>
+              {projectList}
+            </select>
+            <form onSubmit={this.setPalette}>
+              <input type="text" onChange={this.handleChange} value={this.state.palette_name} name="palette_name" />
+              <button className="palette-button" disabled={this.state.project_id == 0}>Save Palette to Project</button>
+            </form>
           </div>
         </div>
-
         <div className="projects-to-display">
           <p className="my-projects-title">my projects</p>
           {projectsToDisplay}
