@@ -106,6 +106,7 @@ export class Projects extends Component {
             <img className="delete-project-button" src={x} alt={'Delete Project icon'} id={project.project_id}/>
           </button>
         <h3 className="project-title">{project.project_name}</h3>
+        <div className="projects-organizer">
         {
           this.props.palettes.map((palette, index) => {
             if (palette.project_id === project.project_id) {
@@ -127,12 +128,13 @@ export class Projects extends Component {
             }
           })
         }
+        </div>
       </div>
     })
     return(
       <div>
         <div className="projects">
-          <form onSubmit={this.addNewProject}>
+          <form onSubmit={this.addNewProject} className="new-project-form">
             <p className="new-project-name">New project name:</p>
             <input type="text" onChange={this.handleChange} value={this.state.project_name} name="project_name" />
             <button className="project-button">Add New Project</button>
@@ -142,7 +144,7 @@ export class Projects extends Component {
             )}
             </div>
           </form>
-          <div>
+          <div className="existing-project-menu">
             <p className="save-to-existing">Save to an existing Project:</p>
             <select className="drop-down" value={this.state.project_id} name="project_id" onChange={this.handleChange}>
               <option value="0" disable="true" select="true" default>Select a Project</option>

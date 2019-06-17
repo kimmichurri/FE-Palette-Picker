@@ -63,3 +63,20 @@ input[type=text]:focus {
   width: 100%;
   display: flex;
 }
+
+@media screen and (max-width: 1100px) {
+  .App {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .projects {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .drop-down {
+    margin-left: 0px;
+  }
+}

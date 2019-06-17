@@ -18,6 +18,11 @@
   box-shadow: 2px 1px 1px #dcdcdc;
 }
 
+.projects-organizer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .individual-projects {
   display: flex;
   border-radius: 10px;
