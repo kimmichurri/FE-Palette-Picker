@@ -71,6 +71,12 @@ input[type=text]:focus {
 }
 
 @media screen and (max-width: 700px) {
+  .app-header {
+    justify-content: center;
+  }
+  .generate-palette-text {
+    flex-direction: column;
+  }
   .projects {
     display: flex;
     flex-direction: column;
