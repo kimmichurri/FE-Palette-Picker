@@ -42,7 +42,9 @@ export class Palette extends Component {
             <img  className="generate-button" src={generate} alt={'Generate New Palette icon'} />
           </button>
         </p>
-        {colorSwatches}
+        <div className="color-swatches-wrapper">
+          {colorSwatches}
+        </div>
       </div>
     )
   }

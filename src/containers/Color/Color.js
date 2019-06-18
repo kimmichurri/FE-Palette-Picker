@@ -10,7 +10,7 @@ export default class Color extends Component {
     return(
       <div className="palette-color" style={{ backgroundColor: color }}>
         <h3 className="indiv-color-text">{color}</h3>
-        <button onClick={this.props.handleToggle} >
+        <button className="fave-button" onClick={this.props.handleToggle} >
           <img className="star-icon" id={index} src={locked ? filledStar : emptyStar} alt={'not saved icon'}/>
         </button>
       </div>
