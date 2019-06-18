@@ -1,7 +1,8 @@
 .App {
   height: 100%;
-  width: 100%;
+  width: 95%;
   display: flex;
+  margin: auto;
 }
 
 .app-header {
@@ -10,6 +11,7 @@
 
 .header-project-wrapper {
   flex: 1;
+  margin-left: 2%;
 }
 
 .main-title {
@@ -60,4 +62,57 @@ input[type=text]:focus {
 .palette-get-set {
   width: 100%;
   display: flex;
+}
+
+@media screen and (max-width: 1100px) {
+  .App {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .app-header {
+    justify-content: center;
+  }
+  .generate-palette-text {
+    flex-direction: column;
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .drop-down {
+    margin-right: 15px;
+  }
+  .color-swatches-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+  }
+  .palette-color {
+    height: 400px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+  .indiv-color-text {
+    font-size: 1em;
+  }
+  .star-icon {
+    width: 75px;
+    height: 75px;
+  }
+  .fave-button {
+    margin: 0px auto;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .palette-color {
+    height: 25vh;
+  }
+  .color-swatches-wrapper {
+    margin-top: 15px;
+  }
 }

@@ -7,7 +7,8 @@
 
 .projects {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-bottom: 7%;
 }
 
 .projects-to-display {
@@ -15,6 +16,11 @@
   background-color: whitesmoke;
   border-radius: 25px;
   box-shadow: 2px 1px 1px #dcdcdc;
+}
+
+.projects-organizer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .individual-projects {

@@ -28,18 +28,18 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="header-project-wrapper">
+        <div className="palette-wrapper">
           <header className="app-header">
             <h1 className="main-title">PALETTE PICKER</h1>
           </header>
+          <Palette />
+        </div>
+        <div className="header-project-wrapper">
           <div className="projects-wrapper">
             {this.props.loading? 
              <Loader /> : <Projects />
             }
           </div>
-        </div>
-        <div className="palette-wrapper">
-          <Palette />
         </div>
       </div>
     );

@@ -37,12 +37,14 @@ export class Palette extends Component {
     })
     return(
       <div className="colors-wrapper">
-        <h2 className="generate-palette-text">generate new palette
+        <p className="generate-palette-text">generate new palette
           <button onClick={this.updateColors} >
             <img  className="generate-button" src={generate} alt={'Generate New Palette icon'} />
           </button>
-        </h2>
-        {colorSwatches}
+        </p>
+        <div className="color-swatches-wrapper">
+          {colorSwatches}
+        </div>
       </div>
     )
   }

@@ -1,12 +1,12 @@
 import React from 'react';
-import loading from '../../assets/loading.gif';
+import rainbowLoader from '../../assets/rainbowLoader.gif';
 
 export default function Loader() {
   return (
     <div className='loading-icon-wrapper'>
       <img
         className='loading-icon'
-        src={loading}
+        src={rainbowLoader}
         alt='loading icon, the projects are loading'
       />
     </div>
